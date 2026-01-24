@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Stuff</title>
+    <link rel="stylesheet" href="./styles/normalize.css" />
+    <link rel="stylesheet" href="./styles/main.css" />
+    <link rel="stylesheet" href="./styles/single.css" />
+</head>
+<body>
+
+
+    <div class="container header">
+        <section class="header__left-column">
+            <header class="header">
+                <div class="header__logo">
+                    <a href="#"><img src="./images/logo.png" alt="Stuff logo" width="78" height="32" /></a>
+                </div>
+            </header>
+        </section>
+
+        <section class="header__right-column">
+            <header class="header">
+                <div class="top">
+                    <div class="user">
+                        <div class="user__avatar">
+                            <img src="./images/avatar.png" alt="avatar" class="user__avatar-photo">
+                        </div>
+                        <div class="user__name">Vasiliy Golovko</div>
+                    </div>
+
+                    <div class="search">
+                        <img src="./images/search.png" alt="search" class="search__img">
+                        <label>
+                            <input type="text" class="search__input"  name="search" />
+                        </label>
+                    </div>
+
+                    <div class="shop-icons__container">
+                        <img src="./images/heart.png" alt="heart">
+                        <div class="shop-icons__shop"><img src="./images/shops.png" alt="heart">
+                            <div class="shop-icons__message-counter">10</div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+        </section>
+    </div>
+
+    <div class="container content">
+        <section class="left menu-section block">
+            <div class="menu">
+                <h1 class="uppercase">Categories</h1>
+                <nav class="menu-wrapper">
+                    <a href="#" class="menu-item">Computers</a>
+                    <a href="#" class="menu-item">Clothes</a>
+                    <a href="#" class="menu-item active">Shoes</a>
+                    <a href="#" class="menu-item">Furniture</a>
+                    <a href="#" class="menu-item">Cosmetics</a>
+                    <a href="#" class="menu-item">Travel</a>
+                    <a href="#" class="menu-item">Automotive</a>
+                </nav>
+            </div>
+            <div class="menu__footer">
+                <div class="menu__help">Help</div>
+                <div class="menu__terms">Terms & Conditions</div>
+            </div>
+        </section>
+
+        <section class="right block">
+            <div class="main">
+                <div class="item-container">
+                  <div class="image-container">
+                    <div class="image-container__main-image">
+                        <img src="./images/img-item-main.png" alt="item">
+                    </div>
+                    <div class="image-list-container">
+                      <div class="image-list-container__image-item">
+                          <img src="./images/img-item.png" alt="item">
+                      </div>
+                      <div class="image-list-container__image-item">
+                          <img src="./images/img-item.png" alt="item">
+                      </div>
+                      <div class="image-list-container__image-item">
+                          <img src="./images/img-item.png" alt="item">
+                      </div>
+                      <div class="image-list-container__image-item">
+                          <img src="./images/img-item.png" alt="item">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="item-detail-container">
+                      <section class="item-describer">
+                        <h4>Bouncing sneaker Hermès</h4>
+                        <div class="item-detail-container__price">599$</div>
+                        <div class="item-params-container">
+                            <div class="item-params-wrapper">
+                                <div class="item-params-container__title">Color:</div>
+                                <div class="item-params-container__value">Blanc</div>
+                            </div>
+                            <div class="item-params-wrapper">
+                              <div class="item-params-container__title">Sizes:</div>
+                              <div class="item-params-container__value btn_sizes">
+                                 <div class="btn_sizes__item">4.5</div>
+                                 <div class="btn_sizes__item btn_sizes__item--current">5</div>
+                                 <div class="btn_sizes__item">5.5</div>
+                              </div>
+                            </div>
+                        </div>
+                        <div class="item-detail__description">
+                            Sneaker in air mesh and suede goatskin. <br />
+                            Light sole with contrasting design for a versatile and modern look.
+                        </div>
+                          <div class="actions-btn">
+                              <button class="actions-btn__btn actions-btn__cart">Add to cart</button>
+                              <button class="actions-btn__btn actions-btn__favorite">Add to favorites</button>
+                          </div>
+                      </section>
+                      <footer class="item-footer">
+                          <div class="item-footer__left">19 people purchased</div>
+                          <div class="item-footer__right">Find in a store</div>
+                      </footer>
+                  </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <section class="container related block">
+        <h1 class="center">Related products</h1>
+    </section>
+
+</body>
+</html>
