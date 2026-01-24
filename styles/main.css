@@ -80,7 +80,16 @@ h4 {
     font-size: 18px;
     font-weight: 500;
     line-height: 100%;
-    color: var(--title-item);
+    color: var(--text-color);
+}
+
+h5 {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 100%;
+    color: var(--text-color);
 }
 
 .uppercase {

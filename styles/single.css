@@ -161,8 +161,31 @@
     border-top-right-radius: var(--border-radius);
 }
 
+.cards-container__desc {
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
 .cards-container__footer {
+    padding: 12px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+}
+
+.cards-container__price {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--btn-color);
+}
+
+.cards-container__discount {
+    padding-left: 5px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--nonactive-color);
 }
