@@ -136,3 +136,33 @@
 .related {
     margin-top: 20px;
 }
+
+.cards-container {
+    width: 100%;
+}
+
+.cards-container__wrapper {
+    margin-top: 24px;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.cards-container__item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: var(--border-radius);
+    background-color: var(--card-bg-color);
+}
+
+.cards-container__image {
+    border-top-left-radius: var(--border-radius);
+    border-top-right-radius: var(--border-radius);
+}
+
+.cards-container__footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
