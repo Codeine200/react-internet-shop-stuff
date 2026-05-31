@@ -1,5 +1,5 @@
 import type { JSX } from 'react';
-import styles from './cartPage.module.css';
+import styles from './CartPage.module.css';
 
 export const CartPage = (): JSX.Element => {
   return (

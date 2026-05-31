@@ -1,5 +1,5 @@
 import type { JSX } from 'react';
-import styles from './header.module.css';
+import styles from './Header.module.css';
 import logo from '@/app/assets/images/logo.png';
 import avatar from '@/app/assets/images/avatar.png';
 import search from '@/app/assets/images/search.png';

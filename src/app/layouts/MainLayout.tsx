@@ -5,7 +5,7 @@ import { useEffect } from 'react';
 import { getCategories } from '@/entities/categories/model';
 import {useDispatch} from "react-redux";
 
-export const SingleLayout = () => {
+export const MainLayout = () => {
     const dispatch = useDispatch();
 
     useEffect(() => {

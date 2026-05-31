@@ -94,36 +94,6 @@
     color: var(--text-color);
 }
 
-.actions-btn {
-    margin-top: 20px;
-    display: flex;
-    flex-direction: row;
-    gap: 10px;
-}
-
-.actions-btn__btn {
-    padding: 9px 20px;
-    margin: 0;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 16px;
-    font-weight: 600;
-    border-radius: var(--border-radius);
-    outline: none;
-    box-shadow: none;
-    border: none;
-    cursor: pointer;
-}
-
-.actions-btn__cart {
-    color: var(--title-color);
-    background-color: var(--btn-color);
-}
-
-.actions-btn__favorite {
-    color: var(--text-color);
-    background-color: var(--nonactive-color);
-}
-
 .item-footer {
     display: flex;
     justify-content: space-between;

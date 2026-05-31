@@ -1,25 +1,53 @@
-import type { JSX } from 'react';
-import styles from './sidebar.module.css';
+import { useSelector } from 'react-redux';
+import type { RootState } from '@/app/store';
+import { Loader } from '@/shared/ui/loader';
 
-export const Sidebar = (): JSX.Element => {
-  return (
-      <section className={`left block ${styles.sidebar}`}>
-          <div>
-              <h1 className="uppercase">Categories</h1>
-              <nav className={styles.menuWrapper}>
-                  <a href="#" className={styles.menuItem}>Computers</a>
-                  <a href="#" className={styles.menuItem}>Clothes</a>
-                  <a href="#" className={`${styles.menuItem} ${styles.active}`}>Shoes</a>
-                  <a href="#" className={styles.menuItem}>Furniture</a>
-                  <a href="#" className={styles.menuItem}>Cosmetics</a>
-                  <a href="#" className={styles.menuItem}>Travel</a>
-                  <a href="#" className={styles.menuItem}>Automotive</a>
-              </nav>
-          </div>
-          <div className={styles.menuFooter}>
-              <div><a href="/help" className={styles.link}>Help</a></div>
-              <div><a href="/help" className={styles.link}>Terms & Conditions</a></div>
-          </div>
-      </section>
-  );
+import styles from './Sidebar.module.css';
+import {NavLink} from "react-router-dom";
+
+export const Sidebar = () => {
+    const { lists, loading, error } = useSelector(
+        (state: RootState) => state.categories
+    );
+
+    return (
+        <section className={`left block ${styles.sidebar}`}>
+                <div>
+                    <h1 className="uppercase">Categories</h1>
+                    {loading ? (
+                        <Loader />
+                    ) : (
+                    <nav className={styles.menuWrapper}>
+                        {lists.map((category) => (
+                            <NavLink
+                                key={category.id}
+                                to={`/categories/${category.id}`}
+                                className={({ isActive }) =>
+                                    isActive
+                                        ? `${styles.menuItem} ${styles.active}`
+                                        : styles.menuItem
+                                }
+                            >
+                                {category.name}
+                            </NavLink>
+                        ))}
+                    </nav>
+                    )}
+                </div>
+
+                <div className={styles.menuFooter}>
+                    <div>
+                        <a href="/help" className={styles.link}>
+                            Help
+                        </a>
+                    </div>
+
+                    <div>
+                        <a href="/help" className={styles.link}>
+                            Terms & Conditions
+                        </a>
+                    </div>
+                </div>
+        </section>
+    );
 };
