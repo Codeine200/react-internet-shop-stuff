@@ -1,6 +1,7 @@
 import styles from './Promotion.module.css';
 import type { PromotionProps } from '../model/types';
 import type { promotions } from '../model/promotions';
+import {useParams} from "react-router-dom";
 
 export const Promotion = ({
                               id,
@@ -9,6 +10,7 @@ export const Promotion = ({
                               title2,
                               image,
                           }: PromotionProps) => {
+
     return (
         <div className={styles.promotion} data-id={id}>
             {title1 && (
@@ -34,8 +36,23 @@ export const Promotion = ({
             </div>
 
             {image && (
-                <div className={styles.image}>
-                    <img src={image} alt={productName} />
+                <div
+                    className={styles.wrapper_image}
+                    style={{
+                        top: image.config?.top,
+                        right: image.config?.right,
+                        bottom: image.config?.bottom,
+                        left: image.config?.left,
+                    }}
+                >
+                    <img
+                        src={image.src}
+                        alt={productName}
+                        style={{
+                            width: image.config?.width,
+                            height: image.config?.height,
+                        }}
+                    />
                 </div>
             )}
         </div>

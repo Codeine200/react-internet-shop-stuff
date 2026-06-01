@@ -6,6 +6,7 @@ export type Category = {
 
 export type CategoriesState = {
     lists: Category[];
+    defaultCategoryId: number | null;
     loading: boolean;
     error: string | null;
 };

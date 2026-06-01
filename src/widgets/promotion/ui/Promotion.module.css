@@ -6,7 +6,7 @@
 .title1 {
     padding: 5px 0 14px 0;
     font-family: 'Montserrat', sans-serif;
-    font-size: 119px;
+    font-size: 100px;
     font-weight: 900;
     color: #616E74;
     text-transform: uppercase;
@@ -37,10 +37,14 @@
 
 }
 
-.image {
+.wrapper_image {
     position: absolute;
     bottom: -50px;
     right: 0;
+}
+
+.image {
+    width: 462px;
 }
 
 

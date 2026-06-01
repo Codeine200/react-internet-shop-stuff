@@ -4,6 +4,6 @@ export const categories = [
     { id: 3, name: 'Shoes', slug: 'shoes' },
     { id: 4, name: 'Furniture', slug: 'furniture' },
     { id: 5, name: 'Cosmetics', slug: 'cosmetics' },
-    { id: 6, name: 'Travel', slug: 'travel' },
-    { id: 7, name: 'Automotive', slug: 'automotive' },
+    { id: 6, name: 'Dishes', slug: 'dishes' },
+    { id: 7, name: 'Sports equipment', slug: 'sports equipment' },
 ] as const;
