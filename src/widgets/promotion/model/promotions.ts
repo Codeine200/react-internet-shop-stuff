@@ -15,7 +15,7 @@ export const promotions: PromotionsByCategory = {
     2: {
         id: 2,
         productName: 'AURORA Silk Elegance Dress',
-        title1: 'NEW COLLECTION',
+        title1: 'NEW SALE',
         title2: 'premium designer fashion selection',
         image: {
             src: '/images/dress.png',
@@ -44,11 +44,15 @@ export const promotions: PromotionsByCategory = {
     4: {
         id: 4,
         productName: 'Modern Office Desk',
-        title1: 'HOME OFFICE SALE',
+        title1: 'OFFICE SALE',
         title2: 'ergonomic design for productivity',
         image: {
             src: '/images/furniture.png',
-            config: {},
+            config: {
+                width: '662px',
+                bottom: '-120px',
+                right: '-120px',
+            },
         },
     },
 
@@ -85,11 +89,15 @@ export const promotions: PromotionsByCategory = {
     7: {
         id: 7,
         productName: 'Boxing Gloves Pro Edition',
-        title1: 'FIGHT NIGHT SALE',
+        title1: 'NIGHT SALE',
         title2: 'durable protection for intense training',
         image: {
             src: '/images/boxing_gloves.png',
-            config: {},
+            config: {
+                width: '662px',
+                bottom: '-120px',
+                right: '-175px',
+            },
         },
     },
 };

@@ -16,7 +16,7 @@ export const CategoryPage = () => {
     useEffect(() => {
         const timer = setTimeout(() => {
             setIsLoadingPromotion(false);
-        }, 1500);
+        }, 500);
 
         return () => clearTimeout(timer);
     }, []);

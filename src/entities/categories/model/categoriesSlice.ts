@@ -9,7 +9,7 @@ export const getCategories = createAsyncThunk<
 >(
     'categories/getCategories',
     async () => {
-        await new Promise((resolve) => setTimeout(resolve, 1000));
+        await new Promise((resolve) => setTimeout(resolve, 500));
         return categories;
     }
 );
