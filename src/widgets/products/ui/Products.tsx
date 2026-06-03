@@ -2,14 +2,12 @@ import styles from './Products.module.css'
 import {JSX, memo, useMemo, useState} from "react";
 import type {ProductsProps} from "../model/type.ts";
 
-const PER_PAGE = 5;
-
-export const Products = memo(function Products({ lists }: ProductsProps) {
+export const Products = memo(function Products({ list, perPage, title }: ProductsProps) {
     const [currPage, setCurrPage] = useState(1);
-    const countPage = Math.ceil(lists.length / PER_PAGE);
+    const countPage = Math.ceil(list.length / perPage);
     const visibleItems = useMemo(() => {
-        return lists.slice(0, currPage * PER_PAGE);
-    }, [lists, currPage]);
+        return list.slice(0, currPage * perPage);
+    }, [list, currPage]);
 
     const showMore = () => {
         setCurrPage(currPage + 1);
@@ -19,8 +17,9 @@ export const Products = memo(function Products({ lists }: ProductsProps) {
       <div className={`${styles.products}`}>
           <section className={`container block`}>
               <div className={styles.cards}>
-                  <h1 className="center">Related products</h1>
-                  <div className={styles.wrapper}>
+                  <h1 className="center">{title}</h1>
+                  <div className={styles.wrapper} style={{gridTemplateColumns: `repeat(${perPage}, 1fr)`,
+                  }}>
                       {visibleItems.map(product => {
                           return (
                               <div key={product.id} className={styles.item}>
@@ -28,7 +27,7 @@ export const Products = memo(function Products({ lists }: ProductsProps) {
                                       <div className={styles.imageWrapper}>
                                           <img
                                               className={styles.image}
-                                              src={`/images/shoes/${product.id}.png`}
+                                              src={product.imgSrc}
                                               alt="related"
                                           />
                                       </div>

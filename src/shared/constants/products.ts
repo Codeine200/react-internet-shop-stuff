@@ -1,6 +1,135 @@
 import type {Product} from "@/entities/products/model/type.ts";
 
-export const products: Product[] = [
+const clothes: Product[] = [
+    {
+        id: 1,
+        name: 'Midnight Glow Dress',
+        type: 'Dress',
+        price: 129,
+        discount: 0.2,
+        purchasedCount: 156,
+        imgSrc: '/images/clothes/1.png',
+    },
+    {
+        id: 2,
+        name: 'Crystal Silk Dress',
+        type: 'Dress',
+        price: 139,
+        discount: 0.15,
+        purchasedCount: 128,
+        imgSrc: '/images/clothes/2.png',
+    },
+    {
+        id: 3,
+        name: 'Velvet Star Dress',
+        type: 'Dress',
+        price: 149,
+        discount: 0.1,
+        purchasedCount: 97,
+        imgSrc: '/images/clothes/3.png',
+    },
+    {
+        id: 4,
+        name: 'Moonlight Elegance Dress',
+        type: 'Dress',
+        price: 159,
+        discount: 0.25,
+        purchasedCount: 203,
+        imgSrc: '/images/clothes/4.png',
+    },
+    {
+        id: 5,
+        name: 'Noir Charm Dress',
+        type: 'Dress',
+        price: 119,
+        discount: 0.2,
+        purchasedCount: 141,
+        imgSrc: '/images/clothes/5.png',
+    },
+    {
+        id: 6,
+        name: 'Aurora Satin Dress',
+        type: 'Dress',
+        price: 169,
+        discount: 0.15,
+        purchasedCount: 89,
+        imgSrc: '/images/clothes/6.png',
+    },
+    {
+        id: 7,
+        name: 'Twilight Luxe Dress',
+        type: 'Dress',
+        price: 149,
+        discount: 0.3,
+        purchasedCount: 174,
+        imgSrc: '/images/clothes/7.png',
+    },
+    {
+        id: 8,
+        name: 'Diamond Night Dress',
+        type: 'Dress',
+        price: 179,
+        discount: 0.1,
+        purchasedCount: 65,
+        imgSrc: '/images/clothes/8.png',
+    },
+    {
+        id: 9,
+        name: 'Urban Classic Suit',
+        type: 'Suit',
+        price: 189,
+        discount: 0.15,
+        purchasedCount: 203,
+        imgSrc: '/images/clothes/9.png',
+    },
+    {
+        id:10,
+        name: 'Royal Navy Suit',
+        type: 'Suit',
+        price: 249,
+        discount: 0.1,
+        purchasedCount: 142,
+        imgSrc: '/images/clothes/10.png',
+    },
+    {
+        id: 11,
+        name: 'Executive Black Suit',
+        type: 'Suit',
+        price: 279,
+        discount: 0.2,
+        purchasedCount: 98,
+        imgSrc: '/images/clothes/11.png',
+    },
+    {
+        id: 12,
+        name: 'Modern Grey Suit',
+        type: 'Suit',
+        price: 219,
+        discount: 0.12,
+        purchasedCount: 175,
+        imgSrc: '/images/clothes/12.png',
+    },
+    {
+        id: 13,
+        name: 'Prestige Charcoal Suit',
+        type: 'Suit',
+        price: 299,
+        discount: 0.18,
+        purchasedCount: 87,
+        imgSrc: '/images/clothes/13.png',
+    },
+    {
+        id: 14,
+        name: 'Elegant Beige Suit',
+        type: 'Suit',
+        price: 229,
+        discount: 0.14,
+        purchasedCount: 134,
+        imgSrc: '/images/clothes/14.png',
+    },
+];
+
+const shoes: Product[] = [
     {
         id: 1,
         name: 'Nike Air Max 270',
@@ -8,6 +137,7 @@ export const products: Product[] = [
         price: 129,
         discount: 0.2,
         purchasedCount: 156,
+        imgSrc: '/images/shoes/1.png',
     },
     {
         id: 2,
@@ -16,6 +146,7 @@ export const products: Product[] = [
         price: 179,
         discount: 0.15,
         purchasedCount: 243,
+        imgSrc: '/images/shoes/2.png',
     },
     {
         id: 3,
@@ -24,6 +155,7 @@ export const products: Product[] = [
         price: 189,
         discount: 0.25,
         purchasedCount: 317,
+        imgSrc: '/images/shoes/3.png',
     },
     {
         id: 4,
@@ -31,6 +163,7 @@ export const products: Product[] = [
         type: 'Sneakers',
         price: 149,
         purchasedCount: 84,
+        imgSrc: '/images/shoes/4.png',
     },
     {
         id: 5,
@@ -39,6 +172,7 @@ export const products: Product[] = [
         price: 169,
         discount: 0.3,
         purchasedCount: 201,
+        imgSrc: '/images/shoes/5.png',
     },
     {
         id: 6,
@@ -47,6 +181,7 @@ export const products: Product[] = [
         price: 199,
         discount: 0.2,
         purchasedCount: 128,
+        imgSrc: '/images/shoes/6.png',
     },
     {
         id: 7,
@@ -55,6 +190,7 @@ export const products: Product[] = [
         price: 139,
         discount: 0.15,
         purchasedCount: 412,
+        imgSrc: '/images/shoes/7.png',
     },
     {
         id: 8,
@@ -62,6 +198,7 @@ export const products: Product[] = [
         type: 'Sneakers',
         price: 159,
         purchasedCount: 178,
+        imgSrc: '/images/shoes/8.png',
     },
     {
         id: 9,
@@ -70,6 +207,7 @@ export const products: Product[] = [
         price: 119,
         discount: 0.25,
         purchasedCount: 92,
+        imgSrc: '/images/shoes/9.png',
     },
     {
         id: 10,
@@ -78,6 +216,7 @@ export const products: Product[] = [
         price: 149,
         discount: 0.2,
         purchasedCount: 135,
+        imgSrc: '/images/shoes/10.png',
     },
     {
         id: 11,
@@ -86,6 +225,7 @@ export const products: Product[] = [
         price: 189,
         discount: 0.4,
         purchasedCount: 267,
+        imgSrc: '/images/shoes/11.png',
     },
     {
         id: 12,
@@ -93,5 +233,11 @@ export const products: Product[] = [
         type: 'Sneakers',
         price: 174,
         purchasedCount: 351,
+        imgSrc: '/images/shoes/12.png',
     },
 ];
+
+
+export const products: Product[][] = [];
+products[0] = clothes;
+products[1] = shoes;

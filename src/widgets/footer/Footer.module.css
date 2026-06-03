@@ -1,0 +1,34 @@
+.footer {
+    margin: 20px 0 0 0;
+}
+
+.wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.copyright {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--nonactive-color);
+}
+
+.link {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--btn-color);
+    text-decoration: none;
+}
+
+.link:hover {
+    color: var(--active-color);
+}
+
+.social {
+    display: flex;
+    gap: 15px;
+}

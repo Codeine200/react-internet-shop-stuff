@@ -5,8 +5,9 @@ import avatar from '@/app/assets/images/avatar.png';
 import search from '@/app/assets/images/search.png';
 import heart from '@/app/assets/images/heart.png';
 import cart from '@/app/assets/images/cart.png';
+import {memo} from "react";
 
-export const Header = (): JSX.Element => {
+const HeaderComponent = (): JSX.Element => {
   return (
       <>
           <div className={`container ${styles.header}`}>
@@ -48,3 +49,5 @@ export const Header = (): JSX.Element => {
       </>
   )
 };
+
+export const Header = memo(HeaderComponent);
