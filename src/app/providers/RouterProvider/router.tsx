@@ -3,20 +3,26 @@ import {SingleLayout} from "@/app/layouts/SingleLayout";
 import {MainLayout} from "@/app/layouts/MainLayout";
 import {CartPage} from "@/pages/CartPage";
 import {CategoryPage} from "@/pages/CategoryPage";
+import {NotFoundPage} from "@/pages/NotFoundPage";
 
 export const router = createBrowserRouter([
     {
-        path: '/',
+        path: "/",
         element: <MainLayout />,
         children: [
             { index: true, element: <CategoryPage /> },
-            { path: 'categories/:categoryId', element: <CategoryPage /> },
+            { path: "categories/:categoryId", element: <CategoryPage /> },
         ],
     },
     {
         element: <SingleLayout />,
         children: [
-            { path: 'cart', element: <CartPage /> },
+            { path: "cart", element: <CartPage /> },
         ],
+    },
+
+    {
+        path: "*",
+        element: <NotFoundPage />,
     },
 ]);

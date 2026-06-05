@@ -1,0 +1,15 @@
+.wrapper {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--bg-color);
+    gap: 50px;
+}
+
+.title {
+    font-size: 48px;
+    color: var(--active-color);
+    font-weight: 800;
+}

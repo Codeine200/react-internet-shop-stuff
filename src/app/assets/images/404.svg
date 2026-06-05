@@ -1,0 +1,27 @@
+<svg width="800" height="500" viewBox="0 0 800 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <text x="90" y="280" font-size="180" font-family="Arial" font-weight="bold" fill="#312E81">4</text>
+    <text x="560" y="280" font-size="180" font-family="Arial" font-weight="bold" fill="#312E81">4</text>
+
+    <circle cx="400" cy="230" r="90" fill="#A78BFA"/>
+    <circle cx="360" cy="190" r="12" fill="#8B5CF6"/>
+    <circle cx="430" cy="170" r="18" fill="#8B5CF6"/>
+    <circle cx="450" cy="240" r="10" fill="#8B5CF6"/>
+    <circle cx="370" cy="260" r="20" fill="#8B5CF6"/>
+
+    <g transform="translate(330 90)">
+        <ellipse cx="70" cy="50" rx="40" ry="45" fill="#111827"/>
+        <rect x="40" y="90" width="60" height="70" rx="12" fill="white"/>
+        <rect x="20" y="110" width="20" height="45" rx="10" fill="white"/>
+        <rect x="100" y="110" width="20" height="45" rx="10" fill="white"/>
+        <rect x="45" y="160" width="15" height="35" rx="7" fill="white"/>
+        <rect x="80" y="160" width="15" height="35" rx="7" fill="white"/>
+    </g>
+
+    <circle cx="150" cy="100" r="4" fill="#A78BFA"/>
+    <circle cx="650" cy="120" r="6" fill="#A78BFA"/>
+    <circle cx="700" cy="80" r="3" fill="#A78BFA"/>
+    <circle cx="200" cy="60" r="5" fill="#A78BFA"/>
+
+    <path d="M640 60L645 70L655 75L645 80L640 90L635 80L625 75L635 70L640 60Z" fill="#A78BFA"/>
+    <path d="M180 130L184 138L192 142L184 146L180 154L176 146L168 142L176 138L180 130Z" fill="#A78BFA"/>
+</svg>

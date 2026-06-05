@@ -102,8 +102,11 @@ h5 {
 }
 
 body {
-    padding: 20px 0 24px 0;
     background-color: var(--bg-color);
+}
+
+.body {
+    padding: 20px 0 24px 0;
 }
 
 .container {

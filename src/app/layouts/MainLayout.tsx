@@ -16,7 +16,7 @@ export const MainLayout = () => {
     }, [dispatch]);
 
     return (
-        <>
+        <section className="body">
             <Header/>
             <div className="container content">
                 <Sidebar/>
@@ -29,6 +29,6 @@ export const MainLayout = () => {
 
             <Products list={trendingItems} perPage={5} title="Trending Products" />
             <Footer />
-        </>
+        </section>
     );
 };

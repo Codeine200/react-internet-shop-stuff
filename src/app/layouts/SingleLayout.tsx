@@ -13,17 +13,17 @@ export const SingleLayout = () => {
     }, [dispatch]);
 
     return (
-    <>
-        <Header />
-        <div className="container content">
-            <Sidebar />
-            <section className="right block">
-                <div className="main">
-                    <Outlet />
-                </div>
-            </section>
-        </div>
+        <section className="main">
+            <Header/>
+            <div className="container content">
+                <Sidebar/>
+                <section className="right block">
+                    <div className="main">
+                        <Outlet/>
+                    </div>
+                </section>
+            </div>
 
-    </>
+        </section>
     );
 };
