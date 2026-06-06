@@ -4,6 +4,7 @@ import {MainLayout} from "@/app/layouts/MainLayout";
 import {CartPage} from "@/pages/CartPage";
 import {CategoryPage} from "@/pages/CategoryPage";
 import {NotFoundPage} from "@/pages/NotFoundPage";
+import {CategoryLayout} from "../../layouts/CategoryLayout.tsx";
 
 export const router = createBrowserRouter([
     {
@@ -11,6 +12,11 @@ export const router = createBrowserRouter([
         element: <MainLayout />,
         children: [
             { index: true, element: <CategoryPage /> },
+        ],
+    },
+    {
+        element: <CategoryLayout />,
+        children: [
             { path: "categories/:categoryId", element: <CategoryPage /> },
         ],
     },
@@ -20,7 +26,6 @@ export const router = createBrowserRouter([
             { path: "cart", element: <CartPage /> },
         ],
     },
-
     {
         path: "*",
         element: <NotFoundPage />,

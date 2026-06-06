@@ -769,11 +769,11 @@ const sportsEquipment: Product[] = [
 
 
 export const products: Product[][] = [];
-products[0] = computers;
-products[1] = clothes;
-products[2] = shoes;
-products[3] = furnitures;
-products[4] = cosmetics;
-products[5] = dishes;
-products[6] = sportsEquipment;
+products[1] = computers;
+products[2] = clothes;
+products[3] = shoes;
+products[4] = furnitures;
+products[5] = cosmetics;
+products[6] = dishes;
+products[7] = sportsEquipment;
 
