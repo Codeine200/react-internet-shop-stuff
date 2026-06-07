@@ -1,5 +1,5 @@
 import type {JSX} from "react";
-import {memo, useEffect, useState} from "react";
+import {memo, useEffect, useMemo, useState} from "react";
 import styles from "./Catalog.module.css";
 import type {CatalogProps} from "../model/type.ts";
 import {Pagination} from "@/shared/ui/pagination/Pagination.tsx";
@@ -8,6 +8,7 @@ import {Loader} from "@/shared/ui/loader";
 import {NotFound} from "@/shared/ui/not-found/NotFound.tsx";
 import {products} from "@/shared/constants/products.ts";
 import type {Product} from "@/entities/products/model/type.ts";
+import {categories} from "../../../shared/constants/categories.ts";
 
 export const Catalog = memo(function Products({ perPage }: CatalogProps) {
     const [isLoadingItems, setIsLoadingItems] = useState(true);
@@ -23,28 +24,49 @@ export const Catalog = memo(function Products({ perPage }: CatalogProps) {
 
         const timer = setTimeout(() => {
             setItems(products[index] ?? []);
+            setCurrPage(1);
             setIsLoadingItems(false);
         }, 500);
 
         return () => clearTimeout(timer);
     }, [categoryId]);
 
+    const currentItems = useMemo(
+        () =>
+            items.slice(
+                (currPage - 1) * perPage,
+                currPage * perPage
+            ),
+        [items, currPage, perPage]
+    );
+
+    const categoryName = useMemo(
+        () => categories.find(category => category.id === index)?.name ?? '',
+        [categoryId]
+    );
+
     if (!products[index]) {
         return <NotFound title="Category not found" />
     }
 
     if (isLoadingItems) {
-        return <Loader />;
+        return (
+            <div className={`${styles.products}`}>
+                <section className={`container block`}>
+                    <Loader />
+                </section>
+            </div>
+        );
     }
 
     return (
         <div className={`${styles.products}`}>
             <section className={`container block`}>
                 <div className={styles.cards}>
-                    <h1 className="center">*******</h1>
+                    <h1 className="center">{categoryName}</h1>
                     <div className={styles.wrapper} style={{gridTemplateColumns: `repeat(${perPage}, 1fr)`,
                     }}>
-                        {items.map(product => {
+                        {currentItems.map(product => {
                             return (
                                 <div key={product.id} className={styles.item}>
                                     <div>
@@ -75,12 +97,12 @@ export const Catalog = memo(function Products({ perPage }: CatalogProps) {
                         })}
 
                     </div>
-
+                    <Pagination currPage={currPage} totalSizePage={countPage} onChange={(page) => setCurrPage(page)} />
 
                 </div>
             </section>
 
-            <Pagination currPage={currPage} totalSizePage={countPage} onChange={(page) => setCurrPage(page)} />
+
         </div>
     );
 });

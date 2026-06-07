@@ -1,6 +1,6 @@
 
 .pagination {
-    margin: 15px 0;
+    margin: 32px 0;
     display: flex;
     flex-direction: row;
     gap: 10px;
@@ -8,17 +8,21 @@
 }
 
 .prev, .page, .next {
-    padding: 5px 10px;
-    border-radius: 20px;
-    color: var(--btn-color);
+    font-family: 'Montserrat', sans-serif;
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    font-weight: 600;
+    color: var(--nonactive-color);
     cursor: pointer;
     border: none;
     outline: none;
+    align-items: center;
 }
 
 .prev:hover, .page:hover, .current:hover, .next:hover {
     background-color: var(--btn-color);
-    color: var(--text-color);
+    color: var(--title-item);
 }
 
 .prev, .next {
@@ -33,11 +37,11 @@
 
 .current {
     background-color: var(--btn-color);
-    color: var(--text-color);
+    color: var(--title-item);
 }
 
 .inactive:hover {
     background-color: var(--bg-color);
     cursor: default;
-    color: var(--btn-color);
+    color: var(--nonactive-color);
 }
