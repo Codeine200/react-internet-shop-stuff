@@ -19,6 +19,13 @@
     justify-content: space-between;
     border-radius: var(--border-radius);
     background-color: var(--card-bg-color);
+    min-width: 0;
+}
+
+.name {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .imageWrapper {

@@ -2,22 +2,24 @@ import type {JSX} from "react";
 import {memo, useEffect, useMemo, useState} from "react";
 import styles from "./Catalog.module.css";
 import type {CatalogProps} from "../model/type.ts";
-import {Pagination} from "@/shared/ui/pagination/Pagination.tsx";
+import {Pagination} from "@/shared/ui/pagination/Pagination";
 import {useParams} from "react-router-dom";
 import {Loader} from "@/shared/ui/loader";
-import {NotFound} from "@/shared/ui/not-found/NotFound.tsx";
+import {NotFound} from "@/shared/ui/not-found/NotFound";
 import {products} from "@/shared/constants/products.ts";
 import type {Product} from "@/entities/products/model/type.ts";
-import {categories} from "../../../shared/constants/categories.ts";
+import {categories} from "@/shared/constants/categories.ts";
+import {ProductFilters} from "@/features/product-filters/ProductFilters";
 
 export const Catalog = memo(function Products({ perPage }: CatalogProps) {
     const [isLoadingItems, setIsLoadingItems] = useState(true);
     const [currPage, setCurrPage] = useState(1);
     const [items, setItems] = useState<Product[]>([]);
-    const { categoryId } = useParams<{ categoryId: number }>();
+    const {categoryId} = useParams<{ categoryId: number }>();
+    const [nameFilter, setNameFilter] = useState("");
+    const [priceFromFilter, setPriceFromFilter] = useState("");
 
     const index = Number(categoryId);
-    const countPage = Math.ceil(items.length / perPage);
 
     useEffect(() => {
         setIsLoadingItems(true);
@@ -31,14 +33,36 @@ export const Catalog = memo(function Products({ perPage }: CatalogProps) {
         return () => clearTimeout(timer);
     }, [categoryId]);
 
-    const currentItems = useMemo(
-        () =>
-            items.slice(
-                (currPage - 1) * perPage,
-                currPage * perPage
-            ),
-        [items, currPage, perPage]
-    );
+    useEffect(() => {
+        setCurrPage(1);
+    }, [nameFilter, priceFromFilter]);
+
+    const filteredItems = useMemo(() => {
+        return items.filter(({ name, price }: Product) => {
+            const isName =
+                nameFilter.trim().length > 0
+                    ? name.toLowerCase().includes(nameFilter.toLowerCase())
+                    : true;
+
+            const isPrice =
+                priceFromFilter.length > 0
+                    ? price >= Number(priceFromFilter)
+                    : true;
+
+            return isName && isPrice;
+        });
+    }, [items, nameFilter, priceFromFilter]);
+
+    const currentItems = useMemo(() => {
+        return filteredItems.slice(
+            (currPage - 1) * perPage,
+            currPage * perPage
+        );
+    }, [filteredItems, currPage, perPage]);
+
+    const countPage = useMemo(() => {
+        return Math.ceil(filteredItems.length / perPage);
+    }, [filteredItems, perPage]);
 
     const categoryName = useMemo(
         () => categories.find(category => category.id === index)?.name ?? '',
@@ -64,6 +88,11 @@ export const Catalog = memo(function Products({ perPage }: CatalogProps) {
             <section className={`container block`}>
                 <div className={styles.cards}>
                     <h1 className="center">{categoryName}</h1>
+                    <ProductFilters  name={nameFilter}
+                                     priceFrom={priceFromFilter}
+                                     onNameChange={setNameFilter}
+                                     onPriceFromChange={setPriceFromFilter}
+                    />
                     <div className={styles.wrapper} style={{gridTemplateColumns: `repeat(${perPage}, 1fr)`,
                     }}>
                         {currentItems.map(product => {
@@ -78,7 +107,7 @@ export const Catalog = memo(function Products({ perPage }: CatalogProps) {
                                             />
                                         </div>
                                         <div className={styles.desc}>
-                                            <h2>{product.name}</h2>
+                                            <h2 className={styles.name}>{product.name}</h2>
                                             <h5>{product.type}</h5>
                                         </div>
                                     </div>
@@ -95,14 +124,10 @@ export const Catalog = memo(function Products({ perPage }: CatalogProps) {
                                 </div>
                             )
                         })}
-
                     </div>
                     <Pagination currPage={currPage} totalSizePage={countPage} onChange={(page) => setCurrPage(page)} />
-
                 </div>
             </section>
-
-
         </div>
     );
 });

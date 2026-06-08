@@ -1,0 +1,25 @@
+.filters {
+    margin: 24px 0;
+    display: flex;
+    gap: 20px;
+}
+
+.inputWrapper {
+    display: flex;
+    padding: 0 24px;
+    width: 230px;
+    height: 40px;
+    border-radius: 8px;
+    background-color: var(--bg-color);
+}
+
+.input {
+    font-family: 'Montserrat', sans-serif;
+    width: 100%;
+    border: none;
+    outline: none;
+    background: transparent;
+    padding: 0;
+    margin: 0;
+    color: var(--nonactive-color);
+}

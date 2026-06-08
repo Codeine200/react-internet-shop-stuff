@@ -27,11 +27,12 @@ const getPages = (currPage: number, total: number, delta: number = 2) => {
 
 export const Pagination = ({currPage, totalSizePage, onChange}: Pageable) => {
     const pages = getPages(currPage, totalSizePage);
-
+    console.log(totalSizePage);
     return (
         <div className={styles.pagination}>
 
-            {currPage === 1 ? <div className={`${styles.prev} ${styles.inactive}`}>Prev</div>
+            {currPage === 1
+                ? <div className={`${styles.prev} ${styles.inactive}`}>Prev</div>
                 : <button className={styles.prev} onClick={() => {onChange(currPage - 1);}}>Prev</button>
             }
 
@@ -49,7 +50,7 @@ export const Pagination = ({currPage, totalSizePage, onChange}: Pageable) => {
                 </button>
             ))}
 
-            {currPage === totalSizePage
+            {currPage === totalSizePage || totalSizePage == 0
                 ? <div className={`${styles.next} ${styles.inactive}`}>Next</div>
                 : <button className={styles.next} onClick={() => {
                     onChange(currPage + 1);
