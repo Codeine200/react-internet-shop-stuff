@@ -1,12 +1,14 @@
-.item-container {
+.itemContainer {
+    height: 100%;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     gap: 31px;
 }
 
-.image-container {
+.imageContainer {
     width: 485px;
+    height: 100%;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -14,7 +16,11 @@
     border-radius: var(--border-radius);
 }
 
-.image-list-container {
+.mainImage {
+    border-radius: var(--border-radius);
+}
+
+.imageListContainer {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -22,15 +28,19 @@
     border-radius: var(--border-radius);
 }
 
-.item-detail-container {
-    padding-right: 70px;
+.imageItem {
+    border-radius: var(--border-radius);
+}
+
+.itemDetailContainer {
+    height: 100%;
     flex: 1;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
 
-.item-detail-container__price {
+.price {
     margin-top: 10px;
     font-family: 'Montserrat', sans-serif;
     font-size: 20px;
@@ -38,19 +48,19 @@
     color: var(--title-item);
 }
 
-.item-params-container {
+.itemParamsContainer {
     margin-top: 20px;
     display: flex;
     flex-direction: column;
 }
 
-.item-params-wrapper {
+.itemParamsWrapper {
     margin-bottom: 16px;
     display: flex;
     gap: 10px;
 }
 
-.item-params-container__title {
+.paramTitle {
     width: 60px;
     font-family: 'Montserrat', sans-serif;
     font-size: 14px;
@@ -59,21 +69,21 @@
     align-content: center;
 }
 
-.item-params-container__value {
+.paramValue {
     font-family: 'Montserrat', sans-serif;
     font-size: 14px;
     font-weight: 500;
     color: var(--title-item);
 }
 
-.btn_sizes {
+.sizes {
     display: flex;
     flex-direction: row;
     gap: 5px;
     justify-content: space-between;
 }
 
-.btn_sizes__item {
+.sizeItem {
     padding: 4px 8px;
     border-radius: var(--border-radius);
     background-color: var(--bg-color);
@@ -83,22 +93,28 @@
     color: var(--title-item);
 }
 
-.btn_sizes__item--current {
+.currentSize {
     background-color: var(--btn-color);
 }
 
-.item-detail__description {
+.description {
     font-family: 'Montserrat', sans-serif;
     font-size: 12px;
     font-weight: 500;
     color: var(--text-color);
 }
 
-.item-footer {
+.itemFooter {
     display: flex;
     justify-content: space-between;
     font-family: 'Montserrat', sans-serif;
     font-size: 10px;
     font-weight: 500;
     color: var(--nonactive-color);
+}
+
+.actions {
+    margin: 20px 0 0 0;
+    display: flex;
+    gap: 10px
 }
