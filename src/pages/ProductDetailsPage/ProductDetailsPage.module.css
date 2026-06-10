@@ -7,13 +7,13 @@
 }
 
 .imageContainer {
-    width: 485px;
+    width: 370px;
     height: 100%;
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    gap: 20px;
     border-radius: var(--border-radius);
+    background-color: #fff;
+    align-items: center;
+    justify-content: center;
 }
 
 .mainImage {

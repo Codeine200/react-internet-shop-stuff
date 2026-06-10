@@ -1,7 +1,7 @@
 import styles from './Promotion.module.css';
 import type { PromotionProps } from '../model/types';
 import type { promotions } from '../model/promotions';
-import {useParams} from "react-router-dom";
+import {Link, useParams} from "react-router-dom";
 
 export const Promotion = ({
                               id,
@@ -30,9 +30,14 @@ export const Promotion = ({
             </h3>
 
             <div className={styles.btn}>
-                <button className="actions-btn__btn actions-btn__primary">
+                <Link
+                    to={`/products/${id}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="actions-btn__btn actions-btn__primary"
+                >
                     Shop Now
-                </button>
+                </Link>
             </div>
 
             {image && (

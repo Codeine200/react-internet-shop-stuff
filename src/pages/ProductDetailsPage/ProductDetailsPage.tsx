@@ -1,96 +1,98 @@
-import type {JSX} from "react";
+import type { JSX } from "react";
+import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+
 import styles from "./ProductDetailsPage.module.css";
+import type { Product } from "@/entities/products/model/type";
+import { Loader } from "@/shared/ui/loader";
+import {products} from "@/shared/constants/products.ts";
+import {NotFound} from "@/shared/ui/not-found/NotFound";
 
-export const ProductDetailsPage = () => {
-  return (
-      <div className={styles.itemContainer}>
-          <div className={styles.imageContainer}>
-              <div className={styles.mainImage}>
-                  <img src="/images/img-item-main.png" alt="item"/>
-              </div>
+export const ProductDetailsPage = (): JSX.Element => {
+    const { productId } = useParams();
 
-              <div className={styles.imageListContainer}>
-                  <div className={styles.imageItem}>
-                      <img src="/images/img-item.png" alt="item"/>
-                  </div>
+    const [product, setProduct] = useState<Product | null>(null);
+    const [isLoading, setIsLoading] = useState(true);
 
-                  <div className={styles.imageItem}>
-                      <img src="/images/img-item.png" alt="item"/>
-                  </div>
+    useEffect(() => {
+        setIsLoading(true);
 
-                  <div className={styles.imageItem}>
-                      <img src="/images/img-item.png" alt="item"/>
-                  </div>
+        const timer = setTimeout(() => {
+            const foundProduct = products
+                .flat()
+                .find((item) => item.id === Number(productId));
 
-                  <div className={styles.imageItem}>
-                      <img src="/images/img-item.png" alt="item"/>
-                  </div>
-              </div>
-          </div>
+            setProduct(foundProduct ?? null);
+            setIsLoading(false);
+        }, 200);
 
-          <div className={styles.itemDetailContainer}>
-              <section>
-                  <h4>Bouncing sneaker Hermès</h4>
+        return () => clearTimeout(timer);
+    }, [productId]);
 
-                  <div className={styles.price}>
-                      599$
-                  </div>
+    if (isLoading) {
+        return <Loader />;
+    }
 
-                  <div className={styles.itemParamsContainer}>
-                      <div className={styles.itemParamsWrapper}>
-                          <div className={styles.paramTitle}>
-                              Color:
-                          </div>
+    if (!product) {
+        return <NotFound title="Product not found" />
+    }
 
-                          <div className={styles.paramValue}>
-                              Blanc
-                          </div>
-                      </div>
+    return (
+        <div className={styles.itemContainer}>
+            <div className={styles.imageContainer}>
+                <div className={styles.mainImage}>
+                    <img
+                        src={product.imgSrc}
+                        alt={product.name}
+                    />
+                </div>
+            </div>
 
-                      <div className={styles.itemParamsWrapper}>
-                          <div className={styles.paramTitle}>
-                              Sizes:
-                          </div>
+            <div className={styles.itemDetailContainer}>
+                <section>
+                    <h4>{product.name}</h4>
 
-                          <div className={styles.sizes}>
-                              <div className={styles.sizeItem}>4.5</div>
+                    <div className={styles.price}>
+                        ${product.price}
+                    </div>
 
-                              <div className={`${styles.sizeItem} ${styles.currentSize}`}>
-                                  5
-                              </div>
+                    <div className={styles.itemParamsContainer}>
+                        <div className={styles.itemParamsWrapper}>
+                            <div className={styles.paramTitle}>
+                                Type:
+                            </div>
 
-                              <div className={styles.sizeItem}>5.5</div>
-                          </div>
-                      </div>
-                  </div>
+                            <div className={styles.paramValue}>
+                                {product.type}
+                            </div>
+                        </div>
+                    </div>
 
-                  <div className={styles.description}>
-                      Sneaker in air mesh and suede goatskin.
-                      <br/>
-                      Light sole with contrasting design for a versatile and modern look.
-                  </div>
+                    <div className={styles.description}>
+                        {product.description}
+                    </div>
 
-                  <div className={styles.actions}>
-                      <button className="actions-btn__btn actions-btn__primary">
-                          Add to cart
-                      </button>
+                    <div className={styles.actions}>
+                        <button className="actions-btn__btn actions-btn__primary">
+                            Add to cart
+                        </button>
 
-                      <button className="actions-btn__btn actions-btn__favorite">
-                          Add to favorites
-                      </button>
-                  </div>
-              </section>
+                        <button className="actions-btn__btn actions-btn__favorite">
+                            Add to favorites
+                        </button>
+                    </div>
+                </section>
 
-              <footer className={styles.itemFooter}>
-                  <div>
-                      19 people purchased
-                  </div>
+                <footer className={styles.itemFooter}>
+                    <div>
+                        {product.purchasedCount} people purchased
+                    </div>
 
-                  <div>
-                      Find in a store
-                  </div>
-              </footer>
-          </div>
-      </div>
-  );
-}
+                    <div>
+                        Find in a store
+                    </div>
+                </footer>
+            </div>
+        </div>
+    );
+};
