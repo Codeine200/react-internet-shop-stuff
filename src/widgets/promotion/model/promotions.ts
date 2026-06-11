@@ -2,8 +2,8 @@ import { PromotionsByCategory } from './types.ts';
 
 export const promotions: PromotionsByCategory = {
     1: {
-        id: 1,
-        productName: 'LENNON R2D2 with NVIDIA 5090 TI',
+        id: 2,
+        productName: 'Nebula Storm Pro',
         title1: 'BIG SALE 20%',
         title2: 'latest high-performance tech gear',
         image: {
@@ -13,8 +13,8 @@ export const promotions: PromotionsByCategory = {
     },
 
     2: {
-        id: 2,
-        productName: 'AURORA Silk Elegance Dress',
+        id: 10,
+        productName: 'Midnight Glow Dress',
         title1: 'NEW SALE',
         title2: 'premium designer fashion selection',
         image: {
@@ -28,8 +28,8 @@ export const promotions: PromotionsByCategory = {
     },
 
     3: {
-        id: 3,
-        productName: 'Nike Air Max Sneakers',
+        id: 24,
+        productName: 'Nike Air Max 270',
         title1: 'SPORTS DEAL',
         title2: 'lightweight comfort for everyday running',
         image: {
@@ -42,8 +42,8 @@ export const promotions: PromotionsByCategory = {
     },
 
     4: {
-        id: 4,
-        productName: 'Modern Office Desk',
+        id: 36,
+        productName: 'Nordic Comfort Chair',
         title1: 'OFFICE SALE',
         title2: 'ergonomic design for productivity',
         image: {
@@ -57,8 +57,8 @@ export const promotions: PromotionsByCategory = {
     },
 
     5: {
-        id: 5,
-        productName: 'Luxury Lipstick Set',
+        id: 51,
+        productName: 'Neon Silk Shampoo',
         title1: 'BEAUTY PROMO',
         title2: 'long-lasting colors with smooth texture',
         image: {
@@ -72,8 +72,8 @@ export const promotions: PromotionsByCategory = {
     },
 
     6: {
-        id: 6,
-        productName: 'Porcelain Dish Set',
+        id: 63,
+        productName: 'Midnight Ceramic Set',
         title1: 'KITCHEN DEAL',
         title2: 'elegant tableware for everyday dining',
         image: {
@@ -87,8 +87,8 @@ export const promotions: PromotionsByCategory = {
     },
 
     7: {
-        id: 7,
-        productName: 'Boxing Gloves Pro Edition',
+        id: 77,
+        productName: 'Elite Sparring Gloves',
         title1: 'NIGHT SALE',
         title2: 'durable protection for intense training',
         image: {

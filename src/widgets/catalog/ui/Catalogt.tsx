@@ -3,7 +3,7 @@ import {memo, useEffect, useMemo, useState} from "react";
 import styles from "./Catalog.module.css";
 import type {CatalogProps} from "../model/type.ts";
 import {Pagination} from "@/shared/ui/pagination/Pagination";
-import {useParams} from "react-router-dom";
+import {Link, useParams} from "react-router-dom";
 import {Loader} from "@/shared/ui/loader";
 import {NotFound} from "@/shared/ui/not-found/NotFound";
 import {products} from "@/shared/constants/products.ts";
@@ -107,7 +107,15 @@ export const Catalog = memo(function Products({ perPage }: CatalogProps) {
                                             />
                                         </div>
                                         <div className={styles.desc}>
-                                            <h2 className={styles.name}>{product.name}</h2>
+                                            <a className={styles.name}></a>
+                                            <Link
+                                                to={`/products/${product.id}`}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className={styles.name}
+                                            >
+                                                {product.name}
+                                            </Link>
                                             <h5>{product.type}</h5>
                                         </div>
                                     </div>
