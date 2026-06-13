@@ -1,12 +1,12 @@
 import {createAsyncThunk} from "@reduxjs/toolkit";
 import type {Product} from "./types";
+import {products} from "@/shared/constants/products.ts";
 
-// mock data
-import {products} from "./mockProducts";
 
 export interface GetProductsParams {
     categoryId?: number;
     search?: string;
+    name?: string;
     minPrice?: number;
 }
 
@@ -22,26 +22,29 @@ export const getProducts = createAsyncThunk<
 
             let result = products;
 
-            // category filter
-            if (params.categoryId) {
-                result = result.filter(
-                    p => p.category.id === params.categoryId
-                );
-            }
+            if (params.categoryId != null) {
+                result = result[params.categoryId] ?? [];
 
-            // search filter
-            if (params.search) {
+                if (params.name) {
+                    const search = params.name.toLowerCase();
+
+                    result = result.filter(p =>
+                            p.name.toLowerCase().includes(search)
+                        );
+                }
+
+                if (params.minPrice !== undefined) {
+                    result = result.filter(
+                        p => p.price >= params.minPrice
+                    );
+                }
+            } else if (params.search) {
                 const search = params.search.toLowerCase();
 
-                result = result.filter(p =>
-                    p.title.toLowerCase().includes(search)
-                );
-            }
-
-            // min price filter
-            if (params.minPrice !== undefined) {
-                result = result.filter(
-                    p => p.price >= params.minPrice!
+                result = result.flat().filter(p =>
+                    p.name.toLowerCase().includes(search) ||
+                    p.description.toLowerCase().includes(search) ||
+                    p.type.toLowerCase().includes(search)
                 );
             }
 
