@@ -7,62 +7,52 @@ import {Link, useParams} from "react-router-dom";
 import {Loader} from "@/shared/ui/loader";
 import {NotFound} from "@/shared/ui/not-found/NotFound";
 import {products} from "@/shared/constants/products.ts";
-import type {Product} from "@/entities/products/model/type.ts";
-import {categories} from "@/shared/constants/categories.ts";
+
 import {ProductFilters} from "@/features/product-filters/ProductFilters";
 
+import {getProducts} from "@/entities/products/model";
+import {useAppDispatch, useAppSelector} from "@/app/providers/StoreProvider/config/hooks.ts";
+
 export const Catalog = memo(function Products({ perPage }: CatalogProps) {
-    const [isLoadingItems, setIsLoadingItems] = useState(true);
+    const dispatch = useAppDispatch();
+
+    const { items, isLoading } = useAppSelector(
+        state => state.products
+    );
+    const categories = useAppSelector(state => state.categories.lists);
+
     const [currPage, setCurrPage] = useState(1);
-    const [items, setItems] = useState<Product[]>([]);
-    const {categoryId} = useParams<{ categoryId: number }>();
+
+    const { categoryId } = useParams();
     const [nameFilter, setNameFilter] = useState("");
     const [priceFromFilter, setPriceFromFilter] = useState("");
 
     const index = Number(categoryId);
 
     useEffect(() => {
-        setIsLoadingItems(true);
+        dispatch(
+            getProducts({
+                categoryId: index,
+                name: nameFilter,
+                minPrice: priceFromFilter
+                    ? Number(priceFromFilter)
+                    : undefined,
+            })
+        );
 
-        const timer = setTimeout(() => {
-            setItems(products[index] ?? []);
-            setCurrPage(1);
-            setIsLoadingItems(false);
-        }, 500);
-
-        return () => clearTimeout(timer);
-    }, [categoryId]);
-
-    useEffect(() => {
         setCurrPage(1);
-    }, [nameFilter, priceFromFilter]);
-
-    const filteredItems = useMemo(() => {
-        return items.filter(({ name, price }: Product) => {
-            const isName =
-                nameFilter.trim().length > 0
-                    ? name.toLowerCase().includes(nameFilter.toLowerCase())
-                    : true;
-
-            const isPrice =
-                priceFromFilter.length > 0
-                    ? price >= Number(priceFromFilter)
-                    : true;
-
-            return isName && isPrice;
-        });
-    }, [items, nameFilter, priceFromFilter]);
+    }, [dispatch, index, nameFilter, priceFromFilter]);
 
     const currentItems = useMemo(() => {
-        return filteredItems.slice(
+        return items.slice(
             (currPage - 1) * perPage,
             currPage * perPage
         );
-    }, [filteredItems, currPage, perPage]);
+    }, [items, currPage, perPage]);
 
     const countPage = useMemo(() => {
-        return Math.ceil(filteredItems.length / perPage);
-    }, [filteredItems, perPage]);
+        return Math.ceil(items.length / perPage);
+    }, [items, perPage]);
 
     const categoryName = useMemo(
         () => categories.find(category => category.id === index)?.name ?? '',
@@ -73,7 +63,7 @@ export const Catalog = memo(function Products({ perPage }: CatalogProps) {
         return <NotFound title="Category not found" />
     }
 
-    if (isLoadingItems) {
+    if (isLoading) {
         return (
             <div className={`${styles.products}`}>
                 <section className={`container block`}>
