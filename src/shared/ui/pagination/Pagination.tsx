@@ -27,7 +27,7 @@ const getPages = (currPage: number, total: number, delta: number = 2) => {
 
 export const Pagination = ({currPage, totalSizePage, onChange}: Pageable) => {
     const pages = getPages(currPage, totalSizePage);
-    console.log(totalSizePage);
+
     return (
         <div className={styles.pagination}>
 
