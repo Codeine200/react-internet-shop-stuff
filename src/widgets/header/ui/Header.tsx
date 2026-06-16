@@ -5,27 +5,17 @@ import avatar from '@/app/assets/images/avatar.png';
 import searchImage from '@/app/assets/images/search.png';
 import heart from '@/app/assets/images/heart.png';
 import cart from '@/app/assets/images/cart.png';
-import {memo, useEffect, useState} from "react";
-import {useDebounce} from "@/shared/lib/hooks/useDebounce.ts";
-import {useAppDispatch} from "@/app/providers/StoreProvider/config/hooks.ts";
+import {memo} from "react";
+import {useAppDispatch} from "@/app/providers/StoreProvider/config/hooks";
 import { setSearch } from '@/entities/products/model/productsSlice';
-import {getProducts} from "@/entities/products/model";
-import {useAppSelector} from "../../../app/providers/StoreProvider/config/hooks.ts";
+import {useAppSelector} from "@/app/providers/StoreProvider/config/hooks";
+import {Link} from "react-router-dom";
 
 const HeaderComponent = (): JSX.Element => {
     const search = useAppSelector(
         state => state.products.search
     );
-    const debouncedSearch = useDebounce(search, 500);
-    const dispatch = useAppDispatch();+
-
-    useEffect(() => {
-        dispatch(
-            getProducts({
-                search: debouncedSearch,
-            })
-        );
-    }, [debouncedSearch]);
+    const dispatch = useAppDispatch();
 
   return (
       <>
@@ -33,7 +23,9 @@ const HeaderComponent = (): JSX.Element => {
               <section className={styles.leftColumn}>
                   <header className={styles.header}>
                       <div className={styles.logo}>
-                          <a href="#"><img src={logo} alt="Stuff logo" width="78" height="32"/></a>
+                          <Link to="/">
+                              <img src={logo} alt="Stuff logo" width="78" height="32"/>
+                          </Link>
                       </div>
                   </header>
               </section>

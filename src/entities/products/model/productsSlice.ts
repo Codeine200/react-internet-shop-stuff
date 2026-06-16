@@ -8,6 +8,7 @@ interface ProductsState {
     error: string | null;
 
     categoryId?: number;
+    name?: string;
     search: string;
     minPrice?: number;
 }
@@ -18,6 +19,7 @@ const initialState: ProductsState = {
     error: null,
 
     categoryId: undefined,
+    name: "",
     search: "",
     minPrice: undefined,
 };
@@ -34,6 +36,11 @@ export const productsSlice = createSlice({
 
         setSearch(state, action: PayloadAction<string>) {
             state.search = action.payload;
+            state.categoryId = undefined;
+        },
+
+        setName(state, action: PayloadAction<string>) {
+            state.name = action.payload;
         },
 
         setMinPrice(state, action: PayloadAction<number | undefined>) {
@@ -43,6 +50,7 @@ export const productsSlice = createSlice({
         resetFilters(state) {
             state.categoryId = undefined;
             state.search = "";
+            state.name = "";
             state.minPrice = undefined;
         },
     },
@@ -70,6 +78,7 @@ export const productsSlice = createSlice({
 export const {
     setCategory,
     setSearch,
+    setName,
     setMinPrice,
     resetFilters,
 } = productsSlice.actions;

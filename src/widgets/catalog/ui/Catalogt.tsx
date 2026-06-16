@@ -7,41 +7,36 @@ import {Link, useParams} from "react-router-dom";
 import {Loader} from "@/shared/ui/loader";
 import {NotFound} from "@/shared/ui/not-found/NotFound";
 import {products} from "@/shared/constants/products.ts";
-
 import {ProductFilters} from "@/features/product-filters/ProductFilters";
-
 import {getProducts} from "@/entities/products/model";
-import {useAppDispatch, useAppSelector} from "@/app/providers/StoreProvider/config/hooks.ts";
+import {useAppDispatch, useAppSelector} from "@/app/providers/StoreProvider/config/hooks";
+import {setCategory} from "@/entities/products/model/productsSlice";
+import {useDebounce} from "@/shared/lib/hooks/useDebounce";
 
 export const Catalog = memo(function Products({ perPage }: CatalogProps) {
     const dispatch = useAppDispatch();
-
-    const { items, isLoading } = useAppSelector(
-        state => state.products
-    );
+    const {
+        items,
+        isLoading,
+        search,
+        name,
+        minPrice,
+    } = useAppSelector(state => state.products);
     const categories = useAppSelector(state => state.categories.lists);
-
     const [currPage, setCurrPage] = useState(1);
-
     const { categoryId } = useParams();
-    const [nameFilter, setNameFilter] = useState("");
-    const [priceFromFilter, setPriceFromFilter] = useState("");
-
     const index = Number(categoryId);
+    const debouncedSearch = useDebounce(search, 500);
+    const debouncedName = useDebounce(name, 500);
 
     useEffect(() => {
-        dispatch(
-            getProducts({
-                categoryId: index,
-                name: nameFilter,
-                minPrice: priceFromFilter
-                    ? Number(priceFromFilter)
-                    : undefined,
-            })
-        );
+        dispatch(setCategory(index));
+    }, [dispatch, index]);
 
+    useEffect(() => {
+        dispatch(getProducts());
         setCurrPage(1);
-    }, [dispatch, index, nameFilter, priceFromFilter]);
+    }, [dispatch, debouncedSearch, debouncedName, minPrice, index]);
 
     const currentItems = useMemo(() => {
         return items.slice(
@@ -78,11 +73,7 @@ export const Catalog = memo(function Products({ perPage }: CatalogProps) {
             <section className={`container block`}>
                 <div className={styles.cards}>
                     <h1 className="center">{categoryName}</h1>
-                    <ProductFilters  name={nameFilter}
-                                     priceFrom={priceFromFilter}
-                                     onNameChange={setNameFilter}
-                                     onPriceFromChange={setPriceFromFilter}
-                    />
+                    <ProductFilters />
                     <div className={styles.wrapper} style={{gridTemplateColumns: `repeat(${perPage}, 1fr)`,
                     }}>
                         {currentItems.map(product => {

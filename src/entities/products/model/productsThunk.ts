@@ -1,56 +1,60 @@
 import {createAsyncThunk} from "@reduxjs/toolkit";
 import type {Product} from "./types";
-import {products} from "@/shared/constants/products.ts";
-
-
-export interface GetProductsParams {
-    categoryId?: number;
-    search?: string;
-    name?: string;
-    minPrice?: number;
-}
+import {products} from "@/shared/constants/products";
+import type {RootState} from "@/app/providers/StoreProvider/config/store";
 
 export const getProducts = createAsyncThunk<
     Product[],
-    GetProductsParams,
+    void,
     { rejectValue: string }
 >(
     "products/getProducts",
-    async (params, thunkApi) => {
+    async (_, thunkApi) => {
         try {
-            await new Promise(res => setTimeout(res, 400));
+            const state = thunkApi.getState() as RootState;
+
+            const {
+                categoryId,
+                search,
+                name,
+                minPrice,
+            } = state.products;
 
             let result = products;
 
-            if (params.categoryId != null) {
-                result = result[params.categoryId] ?? [];
+            if (categoryId != null) {
+                result = result[categoryId] ?? [];
+            }
 
-                if (params.name) {
-                    const search = params.name.toLowerCase();
-
-                    result = result.filter(p =>
-                            p.name.toLowerCase().includes(search)
-                        );
-                }
-
-                if (params.minPrice !== undefined) {
-                    result = result.filter(
-                        p => p.price >= params.minPrice
-                    );
-                }
-            } else if (params.search) {
-                const search = params.search.toLowerCase();
+            if (search) {
+                const filter = search.toLowerCase();
 
                 result = result.flat().filter(p =>
-                    p.name.toLowerCase().includes(search) ||
-                    p.description.toLowerCase().includes(search) ||
-                    p.type.toLowerCase().includes(search)
+                    p.name.toLowerCase().includes(filter) ||
+                    p.description.toLowerCase().includes(filter) ||
+                    p.type.toLowerCase().includes(filter)
+                );
+            }
+
+            if (name) {
+                const filter = name.toLowerCase();
+
+                result = result.filter(p =>
+                    p.name.toLowerCase().includes(filter)
+                );
+            }
+
+            if (minPrice !== undefined) {
+                result = result.filter(
+                    p => p.price >= minPrice
                 );
             }
 
             return result;
-        } catch (e) {
-            return thunkApi.rejectWithValue("Failed to load products");
+        } catch {
+            return thunkApi.rejectWithValue(
+                "Failed to load products"
+            );
         }
     }
 );

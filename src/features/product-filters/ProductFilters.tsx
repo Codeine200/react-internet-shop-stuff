@@ -1,19 +1,14 @@
 import styles from './ProductFilters.module.css';
-import {useState} from "react";
+import {useAppDispatch} from "@/app/providers/StoreProvider/config/hooks.ts";
+import {useAppSelector} from "@/app/providers/StoreProvider/config/hooks.ts";
+import {setMinPrice, setName} from "@/entities/products/model/productsSlice.ts";
 
-type ProductFiltersProps = {
-    name: string;
-    priceFrom: string;
-    onNameChange: (value: string) => void;
-    onPriceFromChange: (value: string) => void;
-};
+export const ProductFilters = () => {
+    const dispatch = useAppDispatch();
 
-export const ProductFilters = ({
-        name,
-        priceFrom,
-        onNameChange,
-        onPriceFromChange,
-  }: ProductFiltersProps) => {
+    const { name, minPrice } = useAppSelector(
+        state => state.products
+    );
 
     return (
       <div className={styles.filters}>
@@ -23,7 +18,7 @@ export const ProductFilters = ({
               className={styles.input}
               type="text"
               placeholder="Product name"
-              onChange={(e) => onNameChange(e.target.value)}
+              onChange={(e) =>  dispatch(setName(e.target.value))}
           />
         </div>
         <div className={styles.inputWrapper}>
@@ -31,12 +26,12 @@ export const ProductFilters = ({
               className={styles.input}
               type="text"
               placeholder="Price from"
-              value={priceFrom}
+              value={minPrice ?? ""}
               onChange={(e) => {
                   let val = e.target.value;
                   val = val.replace(/^0+/, "");
                   if (/^\d*$/.test(val)) {
-                      onPriceFromChange(val);
+                      dispatch(setMinPrice(Number(e.target.value)));
                   }
               }}
           />
