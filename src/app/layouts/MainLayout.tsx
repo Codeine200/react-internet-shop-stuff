@@ -5,8 +5,9 @@ import { useEffect } from 'react';
 import { getCategories } from '@/entities/categories/model';
 import {useDispatch} from "react-redux";
 import {Products} from "@/widgets/products/ui/Products";
-import {Footer} from "@/widgets/footer/Footer.tsx";
-import {trendingItems} from "@/shared/constants/trendingItems.ts";
+import {Footer} from "@/widgets/footer/Footer";
+import {trendingItems} from "@/shared/constants/trendingItems";
+import {LoginForm} from "@/features/auth/sign-in/ui/LoginForm";
 
 export const MainLayout = () => {
     const dispatch = useDispatch();
@@ -17,6 +18,8 @@ export const MainLayout = () => {
 
     return (
         <section className="body">
+            <div className="overlay"></div>
+            <LoginForm/>
             <Header/>
             <div className="container content">
                 <Sidebar/>
@@ -27,8 +30,8 @@ export const MainLayout = () => {
                 </section>
             </div>
 
-            <Products list={trendingItems} perPage={5} title="Trending Products" />
-            <Footer />
+            <Products list={trendingItems} perPage={5} title="Trending Products"/>
+            <Footer/>
         </section>
     );
 };

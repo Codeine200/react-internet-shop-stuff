@@ -25,68 +25,6 @@
     align-items: center;
 }
 
-.user {
-    display: flex;
-    gap: 10px;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.avatar {
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
-    background-color: var(--container-color);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.avatarPhoto {
-    width: 22px;
-    height: 20px;
-}
-
-.userName {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 12px;
-    font-weight: 400;
-    color: var(--text-color);
-}
-
-.search {
-    position: relative;
-    width: 100%;
-    max-width: 303px;
-    height: 35px;
-    border-radius: var(--border-radius);
-    background-color: var(--container-color);
-}
-
-.searchImg {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    width: 13px;
-    height: 13px;
-}
-
-.searchInput {
-    width: 100%;
-    height: 35px;
-    padding: 10px 10px 10px 39px;
-    background-color: var(--container-color);
-    border: none;
-    outline: none;
-    box-shadow: none;
-    color: var(--text-color);
-    font-family: 'Montserrat', sans-serif;
-    font-size: 14px;
-    font-weight: 400;
-    vertical-align: center;
-    border-radius: var(--border-radius);
-}
-
 .shopIconsContainer {
     display: flex;
     justify-content: space-between;

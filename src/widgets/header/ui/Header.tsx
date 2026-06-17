@@ -1,21 +1,15 @@
 import type { JSX } from 'react';
 import styles from './Header.module.css';
 import logo from '@/app/assets/images/logo.png';
-import avatar from '@/app/assets/images/avatar.png';
-import searchImage from '@/app/assets/images/search.png';
+
 import heart from '@/app/assets/images/heart.png';
 import cart from '@/app/assets/images/cart.png';
 import {memo} from "react";
-import {useAppDispatch} from "@/app/providers/StoreProvider/config/hooks";
-import { setSearch } from '@/entities/products/model/productsSlice';
-import {useAppSelector} from "@/app/providers/StoreProvider/config/hooks";
 import {Link} from "react-router-dom";
+import {Search} from "@/features/search/Search";
+import {UserProfile} from "../../../entities/users/ui/UserProfile.tsx";
 
 const HeaderComponent = (): JSX.Element => {
-    const search = useAppSelector(
-        state => state.products.search
-    );
-    const dispatch = useAppDispatch();
 
   return (
       <>
@@ -33,25 +27,8 @@ const HeaderComponent = (): JSX.Element => {
               <section className={styles.rightColumn}>
                   <header className={styles.header}>
                       <div className={styles.top}>
-                          <div className={styles.user}>
-                              <div className={styles.avatar}>
-                                  <img src={avatar} alt="avatar" className={styles.avatarPhoto}/>
-                              </div>
-                              <div className={styles.userName}>Vasiliy Golovko</div>
-                          </div>
-
-                          <div className={styles.search}>
-                              <img src={searchImage} alt="search" className={styles.searchImg}/>
-                              <label>
-                                  <input type="text" className={styles.searchInput} name="search"
-                                         value={search}
-                                         onChange={(e) =>
-                                             dispatch(setSearch(e.target.value))
-                                         }
-                                  />
-                              </label>
-                          </div>
-
+                          <UserProfile />
+                          <Search />
                           <div className={styles.shopIconsContainer}>
                               <img src={heart} alt="heart"/>
                               <div className={styles.shopIcons}><img src={cart} alt="cart"/>

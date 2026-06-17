@@ -4,6 +4,7 @@ import {Outlet} from "react-router-dom";
 import { useEffect } from 'react';
 import { getCategories } from '@/entities/categories/model';
 import {useDispatch} from "react-redux";
+import {LoginForm} from "@/features/auth/sign-in/ui/LoginForm";
 
 export const SingleLayout = () => {
     const dispatch = useDispatch();
@@ -14,6 +15,8 @@ export const SingleLayout = () => {
 
     return (
         <section className="body">
+            <div className="overlay"></div>
+            <LoginForm/>
             <Header/>
             <div className="container content">
                 <Sidebar/>
@@ -23,7 +26,7 @@ export const SingleLayout = () => {
                     </div>
                 </section>
             </div>
-
         </section>
-    );
+    )
+        ;
 };

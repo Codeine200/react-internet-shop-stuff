@@ -4,9 +4,9 @@ import {Outlet} from "react-router-dom";
 import { useEffect } from 'react';
 import { getCategories } from '@/entities/categories/model';
 import {useDispatch} from "react-redux";
-import {Footer} from "@/widgets/footer/Footer.tsx";
-import {trendingItems} from "@/shared/constants/trendingItems.ts";
-import {Catalog} from "@/widgets/catalog/ui/Catalogt.tsx";
+import {Footer} from "@/widgets/footer/Footer";
+import {Catalog} from "@/widgets/catalog/ui/Catalogt";
+import {LoginForm} from "@/features/auth/sign-in/ui/LoginForm";
 
 export const CategoryLayout = () => {
     const dispatch = useDispatch();
@@ -17,6 +17,8 @@ export const CategoryLayout = () => {
 
     return (
         <section className="body">
+            <div className="overlay"></div>
+            <LoginForm/>
             <Header/>
             <div className="container content">
                 <Sidebar/>
@@ -27,8 +29,8 @@ export const CategoryLayout = () => {
                 </section>
             </div>
 
-            <Catalog perPage={5} />
-            <Footer />
+            <Catalog perPage={5}/>
+            <Footer/>
         </section>
     );
 };

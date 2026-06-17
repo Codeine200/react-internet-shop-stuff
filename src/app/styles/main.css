@@ -107,6 +107,8 @@ body {
 
 .body {
     padding: 20px 0 24px 0;
+    position: relative;
+    min-height: 100%;
 }
 
 .container {
@@ -333,3 +335,9 @@ body {
     background-color: var(--nonactive-color);
 }
 
+.overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(33, 33, 35, 0.8);
+    z-index: 10;
+}
