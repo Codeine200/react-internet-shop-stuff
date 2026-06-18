@@ -29,7 +29,7 @@ export const Promotion = ({
                 {productName}
             </h3>
 
-            <div className={styles.btn}>
+            <div>
                 <Link
                     to={`/products/${id}`}
                     target="_blank"

@@ -18,7 +18,7 @@ export const MainLayout = () => {
 
     return (
         <section className="body">
-            <div className="overlay"></div>
+
             <LoginForm/>
             <Header/>
             <div className="container content">

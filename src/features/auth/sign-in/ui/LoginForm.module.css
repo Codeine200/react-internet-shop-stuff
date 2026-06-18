@@ -28,7 +28,13 @@
     border-radius: var(--border-radius);
 }
 
-.loginInput:focus {
+.input:focus {
     border: 1px solid;
     border-color: var(--btn-color);
 }
+
+.input:-webkit-autofill {
+    background-color: var(--card-bg-color);
+    color: var(--title-item);
+}
+

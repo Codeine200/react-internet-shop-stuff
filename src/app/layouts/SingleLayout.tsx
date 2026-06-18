@@ -15,7 +15,6 @@ export const SingleLayout = () => {
 
     return (
         <section className="body">
-            <div className="overlay"></div>
             <LoginForm/>
             <Header/>
             <div className="container content">
@@ -28,5 +27,4 @@ export const SingleLayout = () => {
             </div>
         </section>
     )
-        ;
 };

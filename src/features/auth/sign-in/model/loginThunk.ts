@@ -19,7 +19,7 @@ export const loginThunk = createAsyncThunk<
         return thunkApi.rejectWithValue('User not found');
     }
 
-    const isValid = bcrypt.compareSync(args.password, user.passwordHash);
+    const isValid = bcrypt.compareSync(args.password, user.password);
 
     if (!isValid) {
         return thunkApi.rejectWithValue('Invalid password');

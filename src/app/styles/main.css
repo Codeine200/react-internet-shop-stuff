@@ -335,9 +335,26 @@ body {
     background-color: var(--nonactive-color);
 }
 
+.btn-form {
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+
 .overlay {
     position: fixed;
     inset: 0;
     background: rgba(33, 33, 35, 0.8);
     z-index: 10;
+}
+
+.error {
+    font-family: 'Montserrat', sans-serif;
+    margin-top: 12px;
+    padding: 12px 16px;
+    background: #3a1f1f;
+    color: #ff8a8a;
+    border: 1px solid #7a2f2f;
+    border-radius: 8px;
+    font-size: 14px;
 }
