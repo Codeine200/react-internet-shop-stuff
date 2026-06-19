@@ -2,6 +2,7 @@ import { categories } from '@/shared/constants/categories';
 
 export type PromotionProps = {
     id: number;
+    categoryId: number;
     productName: string;
     title1?: string;
     title2?: string;

@@ -1,6 +1,7 @@
 import styles from './Products.module.css'
 import {JSX, memo, useMemo, useState} from "react";
 import type {ProductsProps} from "../model/type.ts";
+import {Link} from "react-router-dom";
 
 export const Products = memo(function Products({ list, perPage, title }: ProductsProps) {
     const [currPage, setCurrPage] = useState(1);
@@ -32,7 +33,13 @@ export const Products = memo(function Products({ list, perPage, title }: Product
                                           />
                                       </div>
                                       <div className={styles.desc}>
-                                          <h2>{product.name}</h2>
+                                          <Link
+                                              to={`categories/${product.categoryId}/products/${product.id}`}
+                                              rel="noopener noreferrer"
+                                              className={styles.name}
+                                          >
+                                              {product.name}
+                                          </Link>
                                           <h5>{product.type}</h5>
                                       </div>
                                   </div>

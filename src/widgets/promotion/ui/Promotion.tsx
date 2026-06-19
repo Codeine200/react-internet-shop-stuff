@@ -5,6 +5,7 @@ import {Link, useParams} from "react-router-dom";
 
 export const Promotion = ({
                               id,
+                              categoryId,
                               productName,
                               title1,
                               title2,
@@ -31,8 +32,7 @@ export const Promotion = ({
 
             <div>
                 <Link
-                    to={`/products/${id}`}
-                    target="_blank"
+                    to={`/categories/${categoryId}/products/${id}`}
                     rel="noopener noreferrer"
                     className="actions-btn__btn actions-btn__primary"
                 >

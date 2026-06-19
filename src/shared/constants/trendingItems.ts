@@ -3,6 +3,7 @@ import type {Product} from "@/entities/products/model/type.ts";
 export const trendingItems: Product[] = [
     {
         id: 1,
+        categoryId: 1,
         name: 'Quantum Core X1',
         type: 'Gaming PC',
         price: 1899,
@@ -12,6 +13,7 @@ export const trendingItems: Product[] = [
     },
     {
         id: 6,
+        categoryId: 1,
         name: 'Infinity View One',
         type: 'All-in-One PC',
         price: 1399,
@@ -21,6 +23,7 @@ export const trendingItems: Product[] = [
     },
     {
         id: 8,
+        categoryId: 1,
         name: 'Vortex Ultra X',
         type: 'Gaming Laptop',
         price: 1999,
@@ -30,6 +33,7 @@ export const trendingItems: Product[] = [
     },
     {
         id: 10,
+        categoryId: 2,
         name: 'Midnight Glow Dress',
         type: 'Dress',
         price: 129,
@@ -39,6 +43,7 @@ export const trendingItems: Product[] = [
     },
     {
         id: 16,
+        categoryId: 2,
         name: 'Twilight Luxe Dress',
         type: 'Dress',
         price: 149,
@@ -48,6 +53,7 @@ export const trendingItems: Product[] = [
     },
     {
         id: 22,
+        categoryId: 2,
         name: 'Prestige Charcoal Suit',
         type: 'Suit',
         price: 299,
@@ -57,6 +63,7 @@ export const trendingItems: Product[] = [
     },
     {
         id: 28,
+        categoryId: 3,
         name: 'New Balance 9060',
         type: 'Sneakers',
         price: 169,
@@ -66,6 +73,7 @@ export const trendingItems: Product[] = [
     },
     {
         id: 33,
+        categoryId: 3,
         name: 'Under Armour HOVR Phantom',
         type: 'Sneakers',
         price: 149,
@@ -75,6 +83,7 @@ export const trendingItems: Product[] = [
     },
     {
         id: 35,
+        categoryId: 3,
         name: 'Hoka Clifton 10',
         type: 'Sneakers',
         price: 174,
@@ -83,6 +92,7 @@ export const trendingItems: Product[] = [
     },
     {
         id: 41,
+        categoryId: 4,
         name: 'Executive Leather Chair',
         type: 'Furniture',
         price: 399,
@@ -91,6 +101,7 @@ export const trendingItems: Product[] = [
     },
     {
         id: 44,
+        categoryId: 4,
         name: 'Marble Aura Table',
         type: 'Furniture',
         price: 699,
@@ -100,6 +111,7 @@ export const trendingItems: Product[] = [
     },
     {
         id: 48,
+        categoryId: 4,
         name: 'Cloud Comfort Sofa',
         type: 'Furniture',
         price: 899,
@@ -109,6 +121,7 @@ export const trendingItems: Product[] = [
     },
     {
         id: 53,
+        categoryId: 5,
         name: 'Luna Repair Shampoo',
         type: 'Cosmetics',
         price: 22,
@@ -117,6 +130,7 @@ export const trendingItems: Product[] = [
     },
     {
         id: 57,
+        categoryId: 5,
         name: 'Spice Sands Body Cleanser',
         type: 'Cosmetics',
         price: 23,
@@ -126,6 +140,7 @@ export const trendingItems: Product[] = [
     },
     {
         id: 59,
+        categoryId: 5,
         name: 'Lavender Dream Set',
         type: 'Cosmetics',
         price: 34,
@@ -134,6 +149,7 @@ export const trendingItems: Product[] = [
     },
     {
         id: 60,
+        categoryId: 5,
         name: 'Botanica Essence Soap',
         type: 'Cosmetics',
         price: 12,
@@ -143,6 +159,7 @@ export const trendingItems: Product[] = [
     },
     {
         id: 63,
+        categoryId: 6,
         name: 'Midnight Ceramic Set',
         type: 'Dishes',
         price: 89,
@@ -152,6 +169,7 @@ export const trendingItems: Product[] = [
     },
     {
         id: 65,
+        categoryId: 6,
         name: 'Nordic Stone Bowl Set',
         type: 'Dishes',
         price: 74,
@@ -160,6 +178,7 @@ export const trendingItems: Product[] = [
     },
     {
         id: 72,
+        categoryId: 7,
         name: 'Galaxy Rider Skis',
         type: 'Skis',
         price: 629,
@@ -169,6 +188,7 @@ export const trendingItems: Product[] = [
     },
     {
         id: 74,
+        categoryId: 7,
         name: 'Nebula Snowboard',
         type: 'Snowboard',
         price: 449,
@@ -178,6 +198,7 @@ export const trendingItems: Product[] = [
     },
     {
         id: 80,
+        categoryId: 7,
         name: 'Golden Champion Gloves',
         type: 'Boxing Gloves',
         price: 99,
@@ -186,6 +207,7 @@ export const trendingItems: Product[] = [
     },
     {
         id: 84,
+        categoryId: 7,
         name: 'RunMaster Treadmill',
         type: 'Treadmill',
         price: 899,

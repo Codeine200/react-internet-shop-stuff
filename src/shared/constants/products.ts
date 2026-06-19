@@ -3,6 +3,7 @@ import type {Product} from "@/entities/products/model/type.ts";
 const computers: Product[] = [
     {
         id: 1,
+        categoryId: 1,
         name: 'Quantum Core X1',
         type: 'Gaming PC',
         description: 'High-performance gaming system designed for modern AAA titles and competitive gaming. Delivers smooth performance, fast load times, and reliable cooling.',
@@ -13,6 +14,7 @@ const computers: Product[] = [
     },
     {
         id: 2,
+        categoryId: 1,
         name: 'Nebula Storm Pro',
         type: 'Gaming PC',
         description: 'High-performance gaming system designed for modern AAA titles and competitive gaming. Delivers smooth performance, fast load times, and reliable cooling.',
@@ -23,6 +25,7 @@ const computers: Product[] = [
     },
     {
         id: 3,
+        categoryId: 1,
         name: 'Aurora Fusion X',
         type: 'Gaming PC',
         description: 'High-performance gaming system designed for modern AAA titles and competitive gaming. Delivers smooth performance, fast load times, and reliable cooling.',
@@ -33,6 +36,7 @@ const computers: Product[] = [
     },
     {
         id: 4,
+        categoryId: 1,
         name: 'Titan RGB Elite',
         type: 'Gaming PC',
         description: 'High-performance gaming system designed for modern AAA titles and competitive gaming. Delivers smooth performance, fast load times, and reliable cooling.',
@@ -42,6 +46,7 @@ const computers: Product[] = [
     },
     {
         id: 5,
+        categoryId: 1,
         name: 'CyberForge Mini',
         type: 'Gaming PC',
         description: 'High-performance gaming system designed for modern AAA titles and competitive gaming. Delivers smooth performance, fast load times, and reliable cooling.',
@@ -52,6 +57,7 @@ const computers: Product[] = [
     },
     {
         id: 6,
+        categoryId: 1,
         name: 'Infinity View One',
         type: 'All-in-One PC',
         description: 'Space-saving desktop solution with a sleek integrated design. Perfect for productivity, entertainment, and everyday use.',
@@ -62,6 +68,7 @@ const computers: Product[] = [
     },
     {
         id: 7,
+        categoryId: 1,
         name: 'Crystal Edge Pro',
         type: 'Laptop',
         description: 'Portable and powerful laptop built for work, study, and daily multitasking. Offers excellent performance with long-lasting reliability.',
@@ -72,6 +79,7 @@ const computers: Product[] = [
     },
     {
         id: 8,
+        categoryId: 1,
         name: 'Vortex Ultra X',
         type: 'Gaming Laptop',
         description: 'Powerful gaming laptop featuring high-end hardware for demanding games and creative workloads. Combines performance with portability.',
@@ -82,6 +90,7 @@ const computers: Product[] = [
     },
     {
         id: 9,
+        categoryId: 1,
         name: 'Galaxy Flex Pro',
         type: '2-in-1 Laptop',
         description: 'Versatile convertible laptop that easily switches between laptop and tablet modes. Great for productivity, creativity, and entertainment.',
@@ -95,6 +104,7 @@ const computers: Product[] = [
 const clothes: Product[] = [
     {
         id: 10,
+        categoryId: 2,
         name: 'Midnight Glow Dress',
         type: 'Dress',
         description: 'Elegant dress crafted for comfort and style. Perfect for special occasions, evening events, or sophisticated everyday wear.',
@@ -105,6 +115,7 @@ const clothes: Product[] = [
     },
     {
         id: 11,
+        categoryId: 2,
         name: 'Crystal Silk Dress',
         type: 'Dress',
         description: 'Elegant dress crafted for comfort and style. Perfect for special occasions, evening events, or sophisticated everyday wear.',
@@ -115,6 +126,7 @@ const clothes: Product[] = [
     },
     {
         id: 12,
+        categoryId: 2,
         name: 'Velvet Star Dress',
         type: 'Dress',
         description: 'Elegant dress crafted for comfort and style. Perfect for special occasions, evening events, or sophisticated everyday wear.',
@@ -125,6 +137,7 @@ const clothes: Product[] = [
     },
     {
         id: 13,
+        categoryId: 2,
         name: 'Moonlight Elegance Dress',
         type: 'Dress',
         description: 'Elegant dress crafted for comfort and style. Perfect for special occasions, evening events, or sophisticated everyday wear.',
@@ -135,6 +148,7 @@ const clothes: Product[] = [
     },
     {
         id: 14,
+        categoryId: 2,
         name: 'Noir Charm Dress',
         type: 'Dress',
         description: 'Elegant dress crafted for comfort and style. Perfect for special occasions, evening events, or sophisticated everyday wear.',
@@ -145,6 +159,7 @@ const clothes: Product[] = [
     },
     {
         id: 15,
+        categoryId: 2,
         name: 'Aurora Satin Dress',
         type: 'Dress',
         description: 'Elegant dress crafted for comfort and style. Perfect for special occasions, evening events, or sophisticated everyday wear.',
@@ -155,6 +170,7 @@ const clothes: Product[] = [
     },
     {
         id: 16,
+        categoryId: 2,
         name: 'Twilight Luxe Dress',
         type: 'Dress',
         description: 'Elegant dress crafted for comfort and style. Perfect for special occasions, evening events, or sophisticated everyday wear.',
@@ -165,6 +181,7 @@ const clothes: Product[] = [
     },
     {
         id: 17,
+        categoryId: 2,
         name: 'Diamond Night Dress',
         type: 'Dress',
         description: 'Elegant dress crafted for comfort and style. Perfect for special occasions, evening events, or sophisticated everyday wear.',
@@ -175,6 +192,7 @@ const clothes: Product[] = [
     },
     {
         id: 18,
+        categoryId: 2,
         name: 'Urban Classic Suit',
         type: 'Suit',
         description: 'Modern tailored suit made from quality materials for a refined appearance. Ideal for business meetings, formal events, and celebrations.',
@@ -185,6 +203,7 @@ const clothes: Product[] = [
     },
     {
         id:19,
+        categoryId: 2,
         name: 'Royal Navy Suit',
         type: 'Suit',
         description: 'Modern tailored suit made from quality materials for a refined appearance. Ideal for business meetings, formal events, and celebrations.',
@@ -195,6 +214,7 @@ const clothes: Product[] = [
     },
     {
         id: 20,
+        categoryId: 2,
         name: 'Executive Black Suit',
         type: 'Suit',
         description: 'Modern tailored suit made from quality materials for a refined appearance. Ideal for business meetings, formal events, and celebrations.',
@@ -205,6 +225,7 @@ const clothes: Product[] = [
     },
     {
         id: 21,
+        categoryId: 2,
         name: 'Modern Grey Suit',
         type: 'Suit',
         description: 'Modern tailored suit made from quality materials for a refined appearance. Ideal for business meetings, formal events, and celebrations.',
@@ -215,6 +236,7 @@ const clothes: Product[] = [
     },
     {
         id: 22,
+        categoryId: 2,
         name: 'Prestige Charcoal Suit',
         type: 'Suit',
         description: 'Modern tailored suit made from quality materials for a refined appearance. Ideal for business meetings, formal events, and celebrations.',
@@ -225,6 +247,7 @@ const clothes: Product[] = [
     },
     {
         id: 23,
+        categoryId: 2,
         name: 'Elegant Beige Suit',
         type: 'Suit',
         description: 'Modern tailored suit made from quality materials for a refined appearance. Ideal for business meetings, formal events, and celebrations.',
@@ -238,6 +261,7 @@ const clothes: Product[] = [
 const shoes: Product[] = [
     {
         id: 24,
+        categoryId: 3,
         name: 'Nike Air Max 270',
         type: 'Sneakers',
         description: 'Comfortable sneakers featuring responsive cushioning and durable construction. Suitable for everyday wear, walking, and active lifestyles.',
@@ -248,6 +272,7 @@ const shoes: Product[] = [
     },
     {
         id: 25,
+        categoryId: 3,
         name: 'Nike ZoomX Invincible',
         type: 'Sneakers',
         description: 'Comfortable sneakers featuring responsive cushioning and durable construction. Suitable for everyday wear, walking, and active lifestyles.',
@@ -258,6 +283,7 @@ const shoes: Product[] = [
     },
     {
         id: 26,
+        categoryId: 3,
         name: 'Adidas Ultraboost 5',
         type: 'Sneakers',
         description: 'Comfortable sneakers featuring responsive cushioning and durable construction. Suitable for everyday wear, walking, and active lifestyles.',
@@ -268,6 +294,7 @@ const shoes: Product[] = [
     },
     {
         id: 27,
+        categoryId: 3,
         name: 'Puma Velocity Nitro',
         type: 'Sneakers',
         description: 'Comfortable sneakers featuring responsive cushioning and durable construction. Suitable for everyday wear, walking, and active lifestyles.',
@@ -277,6 +304,7 @@ const shoes: Product[] = [
     },
     {
         id: 28,
+        categoryId: 3,
         name: 'New Balance 9060',
         type: 'Sneakers',
         description: 'Comfortable sneakers featuring responsive cushioning and durable construction. Suitable for everyday wear, walking, and active lifestyles.',
@@ -287,6 +315,7 @@ const shoes: Product[] = [
     },
     {
         id: 29,
+        categoryId: 3,
         name: 'Asics Gel-Kayano 31',
         type: 'Sneakers',
         description: 'Comfortable sneakers featuring responsive cushioning and durable construction. Suitable for everyday wear, walking, and active lifestyles.',
@@ -297,6 +326,7 @@ const shoes: Product[] = [
     },
     {
         id: 30,
+        categoryId: 3,
         name: 'Nike Pegasus 41',
         type: 'Sneakers',
         description: 'Comfortable sneakers featuring responsive cushioning and durable construction. Suitable for everyday wear, walking, and active lifestyles.',
@@ -307,6 +337,7 @@ const shoes: Product[] = [
     },
     {
         id: 31,
+        categoryId: 3,
         name: 'Adidas Adizero Boston',
         type: 'Sneakers',
         description: 'Comfortable sneakers featuring responsive cushioning and durable construction. Suitable for everyday wear, walking, and active lifestyles.',
@@ -316,6 +347,7 @@ const shoes: Product[] = [
     },
     {
         id: 32,
+        categoryId: 3,
         name: 'Reebok Floatride Energy',
         type: 'Sneakers',
         description: 'Comfortable sneakers featuring responsive cushioning and durable construction. Suitable for everyday wear, walking, and active lifestyles.',
@@ -326,6 +358,7 @@ const shoes: Product[] = [
     },
     {
         id: 33,
+        categoryId: 3,
         name: 'Under Armour HOVR Phantom',
         type: 'Sneakers',
         description: 'Comfortable sneakers featuring responsive cushioning and durable construction. Suitable for everyday wear, walking, and active lifestyles.',
@@ -336,6 +369,7 @@ const shoes: Product[] = [
     },
     {
         id: 34,
+        categoryId: 3,
         name: 'Saucony Endorphin Speed',
         type: 'Sneakers',
         description: 'Comfortable sneakers featuring responsive cushioning and durable construction. Suitable for everyday wear, walking, and active lifestyles.',
@@ -346,6 +380,7 @@ const shoes: Product[] = [
     },
     {
         id: 35,
+        categoryId: 3,
         name: 'Hoka Clifton 10',
         type: 'Sneakers',
         description: 'Comfortable sneakers featuring responsive cushioning and durable construction. Suitable for everyday wear, walking, and active lifestyles.',
@@ -358,6 +393,7 @@ const shoes: Product[] = [
 const furnitures: Product[] = [
     {
         id: 36,
+        categoryId: 4,
         name: 'Nordic Comfort Chair',
         type: 'Furniture',
         description: 'Stylish and durable furniture piece designed to complement modern interiors. Combines functionality, comfort, and long-lasting quality.',
@@ -368,6 +404,7 @@ const furnitures: Product[] = [
     },
     {
         id: 37,
+        categoryId: 4,
         name: 'Emerald Velvet Chair',
         type: 'Furniture',
         description: 'Stylish and durable furniture piece designed to complement modern interiors. Combines functionality, comfort, and long-lasting quality.',
@@ -378,6 +415,7 @@ const furnitures: Product[] = [
     },
     {
         id: 38,
+        categoryId: 4,
         name: 'Graphite Lounge Chair',
         type: 'Furniture',
         description: 'Stylish and durable furniture piece designed to complement modern interiors. Combines functionality, comfort, and long-lasting quality.',
@@ -387,6 +425,7 @@ const furnitures: Product[] = [
     },
     {
         id: 39,
+        categoryId: 4,
         name: 'Ivory Classic Chair',
         type: 'Furniture',
         description: 'Stylish and durable furniture piece designed to complement modern interiors. Combines functionality, comfort, and long-lasting quality.',
@@ -397,6 +436,7 @@ const furnitures: Product[] = [
     },
     {
         id: 40,
+        categoryId: 4,
         name: 'Scandinavian Oak Chair',
         type: 'Furniture',
         description: 'Stylish and durable furniture piece designed to complement modern interiors. Combines functionality, comfort, and long-lasting quality.',
@@ -407,6 +447,7 @@ const furnitures: Product[] = [
     },
     {
         id: 41,
+        categoryId: 4,
         name: 'Executive Leather Chair',
         type: 'Furniture',
         description: 'Stylish and durable furniture piece designed to complement modern interiors. Combines functionality, comfort, and long-lasting quality.',
@@ -416,6 +457,7 @@ const furnitures: Product[] = [
     },
     {
         id: 42,
+        categoryId: 4,
         name: 'TimberCraft Coffee Table',
         type: 'Furniture',
         description: 'Stylish and durable furniture piece designed to complement modern interiors. Combines functionality, comfort, and long-lasting quality.',
@@ -426,6 +468,7 @@ const furnitures: Product[] = [
     },
     {
         id: 43,
+        categoryId: 4,
         name: 'Walnut Round Table',
         type: 'Furniture',
         description: 'Stylish and durable furniture piece designed to complement modern interiors. Combines functionality, comfort, and long-lasting quality.',
@@ -436,6 +479,7 @@ const furnitures: Product[] = [
     },
     {
         id: 44,
+        categoryId: 4,
         name: 'Marble Aura Table',
         type: 'Furniture',
         description: 'Stylish and durable furniture piece designed to complement modern interiors. Combines functionality, comfort, and long-lasting quality.',
@@ -446,6 +490,7 @@ const furnitures: Product[] = [
     },
     {
         id: 45,
+        categoryId: 4,
         name: 'Midnight Executive Desk',
         type: 'Furniture',
         description: 'Stylish and durable furniture piece designed to complement modern interiors. Combines functionality, comfort, and long-lasting quality.',
@@ -455,6 +500,7 @@ const furnitures: Product[] = [
     },
     {
         id: 46,
+        categoryId: 4,
         name: 'Minimalist Work Desk',
         type: 'Furniture',
         description: 'Stylish and durable furniture piece designed to complement modern interiors. Combines functionality, comfort, and long-lasting quality.',
@@ -465,6 +511,7 @@ const furnitures: Product[] = [
     },
     {
         id: 47,
+        categoryId: 4,
         name: 'Shadow Office Desk',
         type: 'Furniture',
         description: 'Stylish and durable furniture piece designed to complement modern interiors. Combines functionality, comfort, and long-lasting quality.',
@@ -475,6 +522,7 @@ const furnitures: Product[] = [
     },
     {
         id: 48,
+        categoryId: 4,
         name: 'Cloud Comfort Sofa',
         type: 'Furniture',
         description: 'Stylish and durable furniture piece designed to complement modern interiors. Combines functionality, comfort, and long-lasting quality.',
@@ -485,6 +533,7 @@ const furnitures: Product[] = [
     },
     {
         id: 49,
+        categoryId: 4,
         name: 'Vintage Walnut Cabinet',
         type: 'Furniture',
         description: 'Stylish and durable furniture piece designed to complement modern interiors. Combines functionality, comfort, and long-lasting quality.',
@@ -495,6 +544,7 @@ const furnitures: Product[] = [
     },
     {
         id: 50,
+        categoryId: 4,
         name: 'Nordic Storage Console',
         type: 'Furniture',
         description: 'Stylish and durable furniture piece designed to complement modern interiors. Combines functionality, comfort, and long-lasting quality.',
@@ -507,6 +557,7 @@ const furnitures: Product[] = [
 const cosmetics: Product[] = [
     {
         id: 51,
+        categoryId: 5,
         name: 'Neon Silk Shampoo',
         type: 'Cosmetics',
         description: 'Premium personal care product formulated to support healthy skin and hair. Designed for effective daily use and lasting freshness.',
@@ -517,6 +568,7 @@ const cosmetics: Product[] = [
     },
     {
         id: 52,
+        categoryId: 5,
         name: 'Galaxy Glow Body Wash',
         type: 'Cosmetics',
         description: 'Premium personal care product formulated to support healthy skin and hair. Designed for effective daily use and lasting freshness.',
@@ -527,6 +579,7 @@ const cosmetics: Product[] = [
     },
     {
         id: 53,
+        categoryId: 5,
         name: 'Luna Repair Shampoo',
         type: 'Cosmetics',
         description: 'Premium personal care product formulated to support healthy skin and hair. Designed for effective daily use and lasting freshness.',
@@ -536,6 +589,7 @@ const cosmetics: Product[] = [
     },
     {
         id: 54,
+        categoryId: 5,
         name: 'Nova Hydration Foam',
         type: 'Cosmetics',
         description: 'Premium personal care product formulated to support healthy skin and hair. Designed for effective daily use and lasting freshness.',
@@ -546,6 +600,7 @@ const cosmetics: Product[] = [
     },
     {
         id: 55,
+        categoryId: 5,
         name: 'Cosmic Shine Conditioner',
         type: 'Cosmetics',
         description: 'Premium personal care product formulated to support healthy skin and hair. Designed for effective daily use and lasting freshness.',
@@ -556,6 +611,7 @@ const cosmetics: Product[] = [
     },
     {
         id: 56,
+        categoryId: 5,
         name: 'Lavender Fresh Lotion',
         type: 'Cosmetics',
         description: 'Premium personal care product formulated to support healthy skin and hair. Designed for effective daily use and lasting freshness.',
@@ -565,6 +621,7 @@ const cosmetics: Product[] = [
     },
     {
         id: 57,
+        categoryId: 5,
         name: 'Spice Sands Body Cleanser',
         type: 'Cosmetics',
         description: 'Premium personal care product formulated to support healthy skin and hair. Designed for effective daily use and lasting freshness.',
@@ -575,6 +632,7 @@ const cosmetics: Product[] = [
     },
     {
         id: 58,
+        categoryId: 5,
         name: 'Midnight Galaxy Shampoo',
         type: 'Cosmetics',
         description: 'Premium personal care product formulated to support healthy skin and hair. Designed for effective daily use and lasting freshness.',
@@ -585,6 +643,7 @@ const cosmetics: Product[] = [
     },
     {
         id: 59,
+        categoryId: 5,
         name: 'Lavender Dream Set',
         type: 'Cosmetics',
         description: 'Premium personal care product formulated to support healthy skin and hair. Designed for effective daily use and lasting freshness.',
@@ -594,6 +653,7 @@ const cosmetics: Product[] = [
     },
     {
         id: 60,
+        categoryId: 5,
         name: 'Botanica Essence Soap',
         type: 'Cosmetics',
         description: 'Premium personal care product formulated to support healthy skin and hair. Designed for effective daily use and lasting freshness.',
@@ -604,6 +664,7 @@ const cosmetics: Product[] = [
     },
     {
         id: 61,
+        categoryId: 5,
         name: 'Pure Bloom Soap Bar',
         type: 'Cosmetics',
         description: 'Premium personal care product formulated to support healthy skin and hair. Designed for effective daily use and lasting freshness.',
@@ -614,6 +675,7 @@ const cosmetics: Product[] = [
     },
     {
         id: 62,
+        categoryId: 5,
         name: 'Aurora Mist Shampoo',
         type: 'Cosmetics',
         description: 'Premium personal care product formulated to support healthy skin and hair. Designed for effective daily use and lasting freshness.',
@@ -627,6 +689,7 @@ const cosmetics: Product[] = [
 const dishes: Product[] = [
     {
         id: 63,
+        categoryId: 6,
         name: 'Midnight Ceramic Set',
         type: 'Dishes',
         description: 'Elegant kitchen and dining set crafted from durable materials. Perfect for everyday meals and special gatherings.',
@@ -637,6 +700,7 @@ const dishes: Product[] = [
     },
     {
         id: 64,
+        categoryId: 6,
         name: 'Royal Gold Tea Collection',
         type: 'Dishes',
         description: 'Elegant kitchen and dining set crafted from durable materials. Perfect for everyday meals and special gatherings.',
@@ -647,6 +711,7 @@ const dishes: Product[] = [
     },
     {
         id: 65,
+        categoryId: 6,
         name: 'Nordic Stone Bowl Set',
         type: 'Dishes',
         description: 'Elegant kitchen and dining set crafted from durable materials. Perfect for everyday meals and special gatherings.',
@@ -656,6 +721,7 @@ const dishes: Product[] = [
     },
     {
         id: 66,
+        categoryId: 6,
         name: 'Ivory Classic Dinnerware',
         type: 'Dishes',
         description: 'Elegant kitchen and dining set crafted from durable materials. Perfect for everyday meals and special gatherings.',
@@ -666,6 +732,7 @@ const dishes: Product[] = [
     },
     {
         id: 67,
+        categoryId: 6,
         name: 'Pearl Essence Plate Set',
         type: 'Dishes',
         description: 'Elegant kitchen and dining set crafted from durable materials. Perfect for everyday meals and special gatherings.',
@@ -676,6 +743,7 @@ const dishes: Product[] = [
     },
     {
         id: 68,
+        categoryId: 6,
         name: 'Scandinavian Table Collection',
         type: 'Dishes',
         description: 'Elegant kitchen and dining set crafted from durable materials. Perfect for everyday meals and special gatherings.',
@@ -685,6 +753,7 @@ const dishes: Product[] = [
     },
     {
         id: 69,
+        categoryId: 6,
         name: 'Minimal White Kitchen Set',
         type: 'Dishes',
         description: 'Elegant kitchen and dining set crafted from durable materials. Perfect for everyday meals and special gatherings.',
@@ -695,6 +764,7 @@ const dishes: Product[] = [
     },
     {
         id: 70,
+        categoryId: 6,
         name: 'Morning Coffee Ritual Set',
         type: 'Dishes',
         description: 'Elegant kitchen and dining set crafted from durable materials. Perfect for everyday meals and special gatherings.',
@@ -708,6 +778,7 @@ const dishes: Product[] = [
 const sportsEquipment: Product[] = [
     {
         id: 71,
+        categoryId: 7,
         name: 'Arctic Pro Skis',
         type: 'Skis',
         description: 'Performance skis engineered for stability, control, and confidence on snowy slopes. Suitable for recreational and advanced riders.',
@@ -718,6 +789,7 @@ const sportsEquipment: Product[] = [
     },
     {
         id: 72,
+        categoryId: 7,
         name: 'Galaxy Rider Skis',
         type: 'Skis',
         description: 'Performance skis engineered for stability, control, and confidence on snowy slopes. Suitable for recreational and advanced riders.',
@@ -728,6 +800,7 @@ const sportsEquipment: Product[] = [
     },
     {
         id: 73,
+        categoryId: 7,
         name: 'Titan Boxing Bag',
         type: 'Punching Bag',
         description: 'Durable punching bag built to withstand intense training sessions. Helps improve strength, endurance, and technique.',
@@ -738,6 +811,7 @@ const sportsEquipment: Product[] = [
     },
     {
         id: 74,
+        categoryId: 7,
         name: 'Nebula Snowboard',
         type: 'Snowboard',
         description: 'Versatile snowboard offering excellent balance, control, and responsiveness. Designed for enjoyable rides in various snow conditions.',
@@ -748,6 +822,7 @@ const sportsEquipment: Product[] = [
     },
     {
         id: 75,
+        categoryId: 7,
         name: 'Shadow Edge Snowboard',
         type: 'Snowboard',
         description: 'Versatile snowboard offering excellent balance, control, and responsiveness. Designed for enjoyable rides in various snow conditions.',
@@ -757,6 +832,7 @@ const sportsEquipment: Product[] = [
     },
     {
         id: 76,
+        categoryId: 7,
         name: 'Speed Reflex Trainer',
         type: 'Reflex Trainer',
         description: 'Training equipment designed to improve reaction time, coordination, and accuracy. Ideal for boxing and fitness workouts.',
@@ -767,6 +843,7 @@ const sportsEquipment: Product[] = [
     },
     {
         id: 77,
+        categoryId: 7,
         name: 'Elite Sparring Gloves',
         type: 'Boxing Gloves',
         description: 'Protective boxing gloves offering comfort, support, and impact absorption. Suitable for sparring, bag work, and training.',
@@ -777,6 +854,7 @@ const sportsEquipment: Product[] = [
     },
     {
         id: 78,
+        categoryId: 7,
         name: 'Frost Boxing Boots',
         type: 'Boxing Boots',
         description: 'Lightweight boxing boots designed for stability, agility, and footwork. Provide excellent grip and ring performance.',
@@ -786,6 +864,7 @@ const sportsEquipment: Product[] = [
     },
     {
         id: 79,
+        categoryId: 7,
         name: 'Crimson Strike Gloves',
         type: 'Boxing Gloves',
         description: 'Protective boxing gloves offering comfort, support, and impact absorption. Suitable for sparring, bag work, and training.',
@@ -796,6 +875,7 @@ const sportsEquipment: Product[] = [
     },
     {
         id: 80,
+        categoryId: 7,
         name: 'Golden Champion Gloves',
         type: 'Boxing Gloves',
         description: 'Protective boxing gloves offering comfort, support, and impact absorption. Suitable for sparring, bag work, and training.',
@@ -805,6 +885,7 @@ const sportsEquipment: Product[] = [
     },
     {
         id: 81,
+        categoryId: 7,
         name: 'Power Dumbbell Set',
         type: 'Dumbbells',
         description: 'Durable dumbbell set suitable for strength training and full-body workouts. Great for building muscle and improving fitness.',
@@ -815,6 +896,7 @@ const sportsEquipment: Product[] = [
     },
     {
         id: 82,
+        categoryId: 7,
         name: 'Velocity Focus Pads',
         type: 'Focus Pads',
         description: 'Professional focus pads designed for speed, precision, and striking drills. Perfect for boxing and martial arts training.',
@@ -824,6 +906,7 @@ const sportsEquipment: Product[] = [
     },
     {
         id: 83,
+        categoryId: 7,
         name: 'Combat Training Gloves',
         type: 'Training Gloves',
         description: 'Comfortable training gloves built for repeated workouts and skill development. Provide protection and reliable performance.',
@@ -834,6 +917,7 @@ const sportsEquipment: Product[] = [
     },
     {
         id: 84,
+        categoryId: 7,
         name: 'RunMaster Treadmill',
         type: 'Treadmill',
         description: 'High-quality treadmill designed for convenient indoor cardio workouts. Features a stable platform and smooth running experience.',
@@ -844,6 +928,7 @@ const sportsEquipment: Product[] = [
     },
     {
         id: 85,
+        categoryId: 7,
         name: 'Iron Beast Bench Set',
         type: 'Weight Bench',
         description: 'Heavy-duty weight bench suitable for strength training and home gym setups. Built for stability and versatility.',
@@ -853,6 +938,7 @@ const sportsEquipment: Product[] = [
     },
     {
         id: 86,
+        categoryId: 7,
         name: 'Arctic Pro Skis',
         type: 'Skis',
         description: 'Performance skis engineered for stability, control, and confidence on snowy slopes. Suitable for recreational and advanced riders.',
@@ -863,6 +949,7 @@ const sportsEquipment: Product[] = [
     },
     {
         id: 87,
+        categoryId: 7,
         name: 'Galaxy Rider Skis',
         type: 'Skis',
         description: 'Performance skis engineered for stability, control, and confidence on snowy slopes. Suitable for recreational and advanced riders.',
@@ -873,6 +960,7 @@ const sportsEquipment: Product[] = [
     },
     {
         id: 88,
+        categoryId: 7,
         name: 'Titan Boxing Bag',
         type: 'Punching Bag',
         description: 'Durable punching bag built to withstand intense training sessions. Helps improve strength, endurance, and technique.',
@@ -883,6 +971,7 @@ const sportsEquipment: Product[] = [
     },
     {
         id: 89,
+        categoryId: 7,
         name: 'Nebula Snowboard',
         type: 'Snowboard',
         description: 'Versatile snowboard offering excellent balance, control, and responsiveness. Designed for enjoyable rides in various snow conditions.',
@@ -893,6 +982,7 @@ const sportsEquipment: Product[] = [
     },
     {
         id: 90,
+        categoryId: 7,
         name: 'Shadow Edge Snowboard',
         type: 'Snowboard',
         description: 'Versatile snowboard offering excellent balance, control, and responsiveness. Designed for enjoyable rides in various snow conditions.',
@@ -902,6 +992,7 @@ const sportsEquipment: Product[] = [
     },
     {
         id: 91,
+        categoryId: 7,
         name: 'Speed Reflex Trainer',
         type: 'Reflex Trainer',
         description: 'Training equipment designed to improve reaction time, coordination, and accuracy. Ideal for boxing and fitness workouts.',
@@ -912,6 +1003,7 @@ const sportsEquipment: Product[] = [
     },
     {
         id: 92,
+        categoryId: 7,
         name: 'Elite Sparring Gloves',
         type: 'Boxing Gloves',
         description: 'Protective boxing gloves offering comfort, support, and impact absorption. Suitable for sparring, bag work, and training.',
@@ -922,6 +1014,7 @@ const sportsEquipment: Product[] = [
     },
     {
         id: 93,
+        categoryId: 7,
         name: 'Frost Boxing Boots',
         type: 'Boxing Boots',
         description: 'Lightweight boxing boots designed for stability, agility, and footwork. Provide excellent grip and ring performance.',
@@ -931,6 +1024,7 @@ const sportsEquipment: Product[] = [
     },
     {
         id: 94,
+        categoryId: 7,
         name: 'Crimson Strike Gloves',
         type: 'Boxing Gloves',
         description: 'Protective boxing gloves offering comfort, support, and impact absorption. Suitable for sparring, bag work, and training.',
@@ -941,6 +1035,7 @@ const sportsEquipment: Product[] = [
     },
     {
         id: 95,
+        categoryId: 7,
         name: 'Golden Champion Gloves',
         type: 'Boxing Gloves',
         description: 'Protective boxing gloves offering comfort, support, and impact absorption. Suitable for sparring, bag work, and training.',
@@ -950,6 +1045,7 @@ const sportsEquipment: Product[] = [
     },
     {
         id: 96,
+        categoryId: 7,
         name: 'Power Dumbbell Set',
         type: 'Dumbbells',
         description: 'Durable dumbbell set suitable for strength training and full-body workouts. Great for building muscle and improving fitness.',
@@ -960,6 +1056,7 @@ const sportsEquipment: Product[] = [
     },
     {
         id: 97,
+        categoryId: 7,
         name: 'Velocity Focus Pads',
         type: 'Focus Pads',
         description: 'Professional focus pads designed for speed, precision, and striking drills. Perfect for boxing and martial arts training.',
@@ -969,6 +1066,7 @@ const sportsEquipment: Product[] = [
     },
     {
         id: 98,
+        categoryId: 7,
         name: 'Combat Training Gloves',
         type: 'Training Gloves',
         description: 'Comfortable training gloves built for repeated workouts and skill development. Provide protection and reliable performance.',
@@ -979,6 +1077,7 @@ const sportsEquipment: Product[] = [
     },
     {
         id: 99,
+        categoryId: 7,
         name: 'RunMaster Treadmill',
         type: 'Treadmill',
         description: 'High-quality treadmill designed for convenient indoor cardio workouts. Features a stable platform and smooth running experience.',
@@ -989,6 +1088,7 @@ const sportsEquipment: Product[] = [
     },
     {
         id: 100,
+        categoryId: 7,
         name: 'Iron Beast Bench Set',
         type: 'Weight Bench',
         description: 'Heavy-duty weight bench suitable for strength training and home gym setups. Built for stability and versatility.',

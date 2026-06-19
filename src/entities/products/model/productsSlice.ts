@@ -8,6 +8,7 @@ interface ProductsState {
     error: string | null;
 
     categoryId?: number;
+    tempCategoryId?: number;
     name?: string;
     search: string;
     minPrice?: number;
@@ -19,6 +20,7 @@ const initialState: ProductsState = {
     error: null,
 
     categoryId: undefined,
+    tempCategoryId: undefined,
     name: "",
     search: "",
     minPrice: undefined,
@@ -32,11 +34,12 @@ export const productsSlice = createSlice({
     reducers: {
         setCategory(state, action: PayloadAction<number | undefined>) {
             state.categoryId = action.payload;
+            state.tempCategoryId = action.payload;
         },
 
         setSearch(state, action: PayloadAction<string>) {
             state.search = action.payload;
-            state.categoryId = undefined;
+            state.categoryId = (state.search) ? undefined : state.tempCategoryId;
         },
 
         setName(state, action: PayloadAction<string>) {

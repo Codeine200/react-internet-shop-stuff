@@ -24,12 +24,14 @@ export const getProducts = createAsyncThunk<
 
             if (categoryId != null) {
                 result = result[categoryId] ?? [];
+            } else {
+                result = result.flat();
             }
 
             if (search) {
                 const filter = search.toLowerCase();
 
-                result = result.flat().filter(p =>
+                result = result.filter(p =>
                     p.name.toLowerCase().includes(filter) ||
                     p.description.toLowerCase().includes(filter) ||
                     p.type.toLowerCase().includes(filter)

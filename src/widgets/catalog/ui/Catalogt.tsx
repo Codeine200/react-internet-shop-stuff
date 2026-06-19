@@ -90,8 +90,7 @@ export const Catalog = memo(function Products({ perPage }: CatalogProps) {
                                         <div className={styles.desc}>
                                             <a className={styles.name}></a>
                                             <Link
-                                                to={`/products/${product.id}`}
-                                                target="_blank"
+                                                to={`categories/${categoryId}/products/${product.id}`}
                                                 rel="noopener noreferrer"
                                                 className={styles.name}
                                             >

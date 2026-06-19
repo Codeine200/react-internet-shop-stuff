@@ -3,6 +3,7 @@ import { PromotionsByCategory } from './types.ts';
 export const promotions: PromotionsByCategory = {
     1: {
         id: 2,
+        categoryId: 1,
         productName: 'Nebula Storm Pro',
         title1: 'BIG SALE 20%',
         title2: 'latest high-performance tech gear',
@@ -14,6 +15,7 @@ export const promotions: PromotionsByCategory = {
 
     2: {
         id: 10,
+        categoryId: 2,
         productName: 'Midnight Glow Dress',
         title1: 'NEW SALE',
         title2: 'premium designer fashion selection',
@@ -29,6 +31,7 @@ export const promotions: PromotionsByCategory = {
 
     3: {
         id: 24,
+        categoryId: 3,
         productName: 'Nike Air Max 270',
         title1: 'SPORTS DEAL',
         title2: 'lightweight comfort for everyday running',
@@ -43,6 +46,7 @@ export const promotions: PromotionsByCategory = {
 
     4: {
         id: 36,
+        categoryId: 4,
         productName: 'Nordic Comfort Chair',
         title1: 'OFFICE SALE',
         title2: 'ergonomic design for productivity',
@@ -58,6 +62,7 @@ export const promotions: PromotionsByCategory = {
 
     5: {
         id: 51,
+        categoryId: 5,
         productName: 'Neon Silk Shampoo',
         title1: 'BEAUTY PROMO',
         title2: 'long-lasting colors with smooth texture',
@@ -73,6 +78,7 @@ export const promotions: PromotionsByCategory = {
 
     6: {
         id: 63,
+        categoryId: 6,
         productName: 'Midnight Ceramic Set',
         title1: 'KITCHEN DEAL',
         title2: 'elegant tableware for everyday dining',
@@ -88,6 +94,7 @@ export const promotions: PromotionsByCategory = {
 
     7: {
         id: 77,
+        categoryId: 7,
         productName: 'Elite Sparring Gloves',
         title1: 'NIGHT SALE',
         title2: 'durable protection for intense training',
