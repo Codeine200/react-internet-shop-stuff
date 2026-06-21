@@ -5,6 +5,7 @@ import { useEffect } from 'react';
 import { getCategories } from '@/entities/categories/model';
 import {useDispatch} from "react-redux";
 import {LoginForm} from "@/features/auth/sign-in/ui/LoginForm";
+import {Footer} from "@/widgets/footer";
 
 export const SingleLayout = () => {
     const dispatch = useDispatch();
@@ -25,6 +26,7 @@ export const SingleLayout = () => {
                     </div>
                 </section>
             </div>
+            <Footer/>
         </section>
     )
 };

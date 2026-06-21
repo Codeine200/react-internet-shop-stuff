@@ -6,8 +6,8 @@ import heart from '@/app/assets/images/heart.png';
 import cart from '@/app/assets/images/cart.png';
 import {memo} from "react";
 import {Link} from "react-router-dom";
-import {Search} from "@/features/search/Search";
-import {UserProfile} from "../../../entities/users/ui/UserProfile.tsx";
+import {Search} from "@/features/search";
+import {UserProfile} from "@/widgets/user-profile";
 
 const HeaderComponent = (): JSX.Element => {
 

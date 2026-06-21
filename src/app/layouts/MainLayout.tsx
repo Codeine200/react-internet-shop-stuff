@@ -4,8 +4,8 @@ import {Outlet} from "react-router-dom";
 import { useEffect } from 'react';
 import { getCategories } from '@/entities/categories/model';
 import {useDispatch} from "react-redux";
-import {Products} from "@/widgets/products/ui/Products";
-import {Footer} from "@/widgets/footer/Footer";
+import {Products} from "@/widgets/products";
+import {Footer} from "@/widgets/footer";
 import {trendingItems} from "@/shared/constants/trendingItems";
 import {LoginForm} from "@/features/auth/sign-in/ui/LoginForm";
 

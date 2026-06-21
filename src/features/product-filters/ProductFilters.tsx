@@ -1,9 +1,11 @@
+import type {JSX} from "react";
 import styles from './ProductFilters.module.css';
 import {useAppDispatch} from "@/app/providers/StoreProvider/config/hooks.ts";
 import {useAppSelector} from "@/app/providers/StoreProvider/config/hooks.ts";
 import {setMinPrice, setName} from "@/entities/products/model/productsSlice.ts";
+import {memo} from "react";
 
-export const ProductFilters = () => {
+export const ProductFilters = memo(function ProductFilters() {
     const dispatch = useAppDispatch();
 
     const { name, minPrice } = useAppSelector(
@@ -38,4 +40,4 @@ export const ProductFilters = () => {
         </div>
       </div>
     );
-}
+});

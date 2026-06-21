@@ -1,11 +1,11 @@
-import {Promotion} from "@/widgets/promotion/ui/Promotion";
+import {Promotion} from "@/widgets/promotion/";
 import {useEffect, useState} from "react";
-import {promotions} from "@/widgets/promotion/model/promotions";
 import {Loader} from "@/shared/ui/loader";
 import {useParams} from "react-router-dom";
 import {useSelector} from "react-redux";
 import type {RootState} from "@/app/store";
-import {NotFound} from "@/shared/ui/not-found/NotFound";
+import {NotFound} from "@/shared/ui/not-found";
+import {promotions} from "@/shared/constants/promotions";
 
 export const CategoryPage = () => {
     const [isLoadingPromotion, setIsLoadingPromotion] = useState(true);

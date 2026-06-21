@@ -1,7 +1,6 @@
 import styles from './Promotion.module.css';
 import type { PromotionProps } from '../model/types';
-import type { promotions } from '../model/promotions';
-import {Link, useParams} from "react-router-dom";
+import {Link} from "react-router-dom";
 
 export const Promotion = ({
                               id,

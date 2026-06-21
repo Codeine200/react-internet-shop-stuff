@@ -1,4 +1,4 @@
-import { PromotionsByCategory } from './types.ts';
+import {PromotionsByCategory} from "@/widgets/promotion/model/types.ts";
 
 export const promotions: PromotionsByCategory = {
     1: {
