@@ -1,6 +1,6 @@
 import {createSlice, type PayloadAction} from "@reduxjs/toolkit";
 import {getProducts} from "./productsThunk";
-import type {Product} from "./types";
+import type {Product} from "./type";
 
 interface ProductsState {
     items: Product[];
@@ -73,7 +73,9 @@ export const productsSlice = createSlice({
             .addCase(getProducts.rejected, (state, action) => {
                 state.loading = false;
                 state.error =
-                    action.payload ?? "Failed to load products";
+                    typeof action.payload === 'string'
+                        ? action.payload
+                        : action.error.message ?? 'Something went wrong';
             });
     },
 });

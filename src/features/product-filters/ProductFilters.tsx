@@ -1,4 +1,3 @@
-import type {JSX} from "react";
 import styles from './ProductFilters.module.css';
 import {useAppDispatch} from "@/app/providers/StoreProvider/config/hooks.ts";
 import {useAppSelector} from "@/app/providers/StoreProvider/config/hooks.ts";

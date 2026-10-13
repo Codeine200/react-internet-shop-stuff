@@ -3,19 +3,19 @@ import {useEffect, useState} from "react";
 import {Loader} from "@/shared/ui/loader";
 import {useParams} from "react-router-dom";
 import {useSelector} from "react-redux";
-import type {RootState} from "@/app/store";
+import type { RootState } from '@/app/providers/StoreProvider/config/store';
 import {NotFound} from "@/shared/ui/not-found";
 import {promotions} from "@/shared/constants/promotions";
 
 export const CategoryPage = () => {
     const [isLoadingPromotion, setIsLoadingPromotion] = useState(true);
-    const { categoryId } = useParams<{ categoryId: number }>();
-    const { defaultCategoryId, loading, error } = useSelector(
+    const { categoryId } = useParams<{ categoryId: string }>();
+    const { defaultCategoryId, loading } = useSelector(
         (state: RootState) => state.categories
     );
 
-    const id = Number(categoryId);
-    const index = Number.isFinite(id) ? id : defaultCategoryId;
+    const id = categoryId ? Number(categoryId) : NaN;
+    const index = Number.isInteger(id) ? id : defaultCategoryId;
 
     useEffect(() => {
         const timer = setTimeout(() => {
@@ -25,8 +25,11 @@ export const CategoryPage = () => {
         return () => clearTimeout(timer);
     }, []);
 
-    if (!(index in promotions)) {
-        return <NotFound title="Category not found" />
+    if (
+        index === null ||
+        !(index in promotions)
+    ) {
+        return <NotFound title="Category not found" />;
     }
 
     if (isLoadingPromotion || loading) {

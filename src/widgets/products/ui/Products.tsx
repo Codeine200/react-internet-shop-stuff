@@ -1,14 +1,14 @@
 import styles from './Products.module.css'
-import {JSX, memo, useMemo, useState} from "react";
+import { memo, useMemo, useState} from "react";
 import type {ProductsProps} from "../model/type.ts";
 import {Link} from "react-router-dom";
 
-export const Products = memo(function Products({ list, perPage, title }: ProductsProps) {
+export const Products = memo(function Products({ list, perPage = 5, title }: ProductsProps) {
     const [currPage, setCurrPage] = useState(1);
     const countPage = Math.ceil(list.length / perPage);
     const visibleItems = useMemo(() => {
         return list.slice(0, currPage * perPage);
-    }, [list, currPage]);
+    }, [list, currPage, perPage]);
 
     const showMore = () => {
         setCurrPage(currPage + 1);

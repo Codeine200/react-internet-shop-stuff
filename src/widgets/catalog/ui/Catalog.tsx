@@ -1,4 +1,3 @@
-import type {JSX} from "react";
 import {memo, useEffect, useMemo, useState} from "react";
 import styles from "./Catalog.module.css";
 import type {CatalogProps} from "../model/type.ts";
@@ -13,11 +12,11 @@ import {useAppDispatch, useAppSelector} from "@/app/providers/StoreProvider/conf
 import {setCategory} from "@/entities/products/model/productsSlice";
 import {useDebounce} from "@/shared/lib/hooks/useDebounce";
 
-export const Catalog = memo(function Products({ perPage }: CatalogProps) {
+export const Catalog = memo(function Products({ perPage = 5 }: CatalogProps) {
     const dispatch = useAppDispatch();
     const {
         items,
-        isLoading,
+        loading,
         search,
         name,
         minPrice,
@@ -51,14 +50,14 @@ export const Catalog = memo(function Products({ perPage }: CatalogProps) {
 
     const categoryName = useMemo(
         () => categories.find(category => category.id === index)?.name ?? '',
-        [categoryId]
+        [categories, index]
     );
-
+  
     if (!products[index]) {
         return <NotFound title="Category not found" />
     }
 
-    if (isLoading) {
+    if (loading) {
         return (
             <div className={`${styles.products}`}>
                 <section className={`container block`}>

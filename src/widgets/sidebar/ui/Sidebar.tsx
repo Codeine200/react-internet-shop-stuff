@@ -1,12 +1,12 @@
 import { useSelector } from 'react-redux';
-import type { RootState } from '@/app/store';
+import type { RootState } from '@/app/providers/StoreProvider/config/store';
 import { Loader } from '@/shared/ui/loader';
 
 import styles from './Sidebar.module.css';
 import {NavLink} from "react-router-dom";
 
 export const Sidebar = () => {
-    const { lists, loading, error } = useSelector(
+    const { lists, loading } = useSelector(
         (state: RootState) => state.categories
     );
 

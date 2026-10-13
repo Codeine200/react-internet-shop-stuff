@@ -1,4 +1,3 @@
-import type { JSX } from 'react';
 import styles from './NotFound.module.css';
 import {memo} from "react";
 

@@ -1,5 +1,5 @@
 import {createAsyncThunk} from "@reduxjs/toolkit";
-import type {Product} from "./types";
+import type {Product} from "./type";
 import {products} from "@/shared/constants/products";
 import type {RootState} from "@/app/providers/StoreProvider/config/store";
 
@@ -20,12 +20,12 @@ export const getProducts = createAsyncThunk<
                 minPrice,
             } = state.products;
 
-            let result = products;
-
+            let result: Product[];
+            
             if (categoryId != null) {
-                result = result[categoryId] ?? [];
+                result = products[categoryId] ?? [];
             } else {
-                result = result.flat();
+                result = products.flat();
             }
 
             if (search) {
@@ -33,7 +33,7 @@ export const getProducts = createAsyncThunk<
 
                 result = result.filter(p =>
                     p.name.toLowerCase().includes(filter) ||
-                    p.description.toLowerCase().includes(filter) ||
+                    p.description?.toLowerCase().includes(filter) ||
                     p.type.toLowerCase().includes(filter)
                 );
             }

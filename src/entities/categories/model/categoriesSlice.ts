@@ -1,6 +1,6 @@
 import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
 import { categories } from '@/shared/constants/categories';
-import {CategoriesState, Category} from './types';
+import type { CategoriesState, Category } from './types';
 
 export const getCategories = createAsyncThunk<
     Category[],
@@ -10,7 +10,7 @@ export const getCategories = createAsyncThunk<
     'categories/getCategories',
     async () => {
         await new Promise((resolve) => setTimeout(resolve, 500));
-        return categories;
+        return [...categories];
     }
 );
 
@@ -38,7 +38,10 @@ const categoriesSlice =  createSlice({
             })
             .addCase(getCategories.rejected, (state: CategoriesState, action) => {
                 state.loading = false;
-                state.error = action.payload  ?? 'Something went wrong';
+                state.error =
+                    typeof action.payload === 'string'
+                        ? action.payload
+                        : action.error.message ?? 'Something went wrong';
             });
     },
 });

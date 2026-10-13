@@ -1,4 +1,4 @@
-import { User } from '@/entities/user/model/types';
+import type { User } from '@/entities/users/model/types';
 
 export type AuthState = {
     user: User | null;

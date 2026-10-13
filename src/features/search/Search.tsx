@@ -3,9 +3,9 @@ import {useAppDispatch} from "@/app/providers/StoreProvider/config/hooks";
 import { setSearch } from '@/entities/products/model/productsSlice';
 import {useAppSelector} from "@/app/providers/StoreProvider/config/hooks";
 import searchImage from '@/app/assets/images/search.png';
-import {JSX, memo} from "react";
+import { memo} from "react";
 
-export const SearchComponent = (): JSX.Element => {
+export const SearchComponent = () => {
   const search = useAppSelector(
       state => state.products.search
   );

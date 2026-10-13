@@ -3,13 +3,13 @@ import {Sidebar} from "@/widgets/sidebar";
 import {Outlet} from "react-router-dom";
 import { useEffect } from 'react';
 import { getCategories } from '@/entities/categories/model';
-import {useDispatch} from "react-redux";
+import { useAppDispatch } from "@/app/providers/StoreProvider/config/hooks";
 import {Footer} from "@/widgets/footer";
 import {Catalog} from "@/widgets/catalog";
 import {LoginForm} from "@/features/auth/sign-in/ui/LoginForm";
 
 export const CategoryLayout = () => {
-    const dispatch = useDispatch();
+    const dispatch = useAppDispatch();
 
     useEffect(() => {
         dispatch(getCategories());

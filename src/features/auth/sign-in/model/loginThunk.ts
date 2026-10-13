@@ -1,6 +1,6 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import bcrypt from 'bcryptjs';
-import { User } from '@/entities/user/model/types';
+import type { User } from '@/entities/users/model/types';
 import {users} from "@/shared/constants/users";
 
 type LoginRequest = {
