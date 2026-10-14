@@ -330,7 +330,7 @@ body {
     background-color: var(--btn-color);
 }
 
-.actions-btn__favorite {
+.actions-btn__inactive {
     color: var(--text-color);
     background-color: var(--nonactive-color);
 }

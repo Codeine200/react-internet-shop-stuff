@@ -5,7 +5,8 @@ import {useParams} from "react-router-dom";
 import {useSelector} from "react-redux";
 import type { RootState } from '@/app/providers/StoreProvider/config/store';
 import {NotFound} from "@/shared/ui/not-found";
-import {promotions} from "@/shared/constants/promotions";
+import { promotions } from "@/shared/constants/promotions";
+import type { CategoryId } from "@/widgets/promotion/model/types";
 
 export const CategoryPage = () => {
     const [isLoadingPromotion, setIsLoadingPromotion] = useState(true);
@@ -27,6 +28,7 @@ export const CategoryPage = () => {
 
     if (
         index === null ||
+        !Number.isInteger(index) ||
         !(index in promotions)
     ) {
         return <NotFound title="Category not found" />;
@@ -36,9 +38,11 @@ export const CategoryPage = () => {
         return <Loader />;
     }
 
+    const categoryKey = index as CategoryId;  
     return (
         <div>
-            <Promotion {...promotions[index]} />
+            <Promotion {...promotions[categoryKey]} />
         </div>
     );
 };
+

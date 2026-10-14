@@ -15,4 +15,5 @@ const loginFormSlice = createSlice({
     },
 });
 
+export const { openLogin, closeLogin } = loginFormSlice.actions;
 export const loginFormReducer = loginFormSlice.reducer;

@@ -9,7 +9,7 @@
 .wrapper {
     margin-top: 24px;
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(5, minmax(0, 1fr));
     gap: 20px;
 }
 
@@ -89,13 +89,19 @@
 }
 
 .name {
-    white-space: nowrap;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    line-clamp: 1;
+
     overflow: hidden;
-    text-overflow: ellipsis;
+    overflow-wrap: anywhere;
+
     font-family: 'Montserrat', sans-serif;
     font-size: 16px;
     font-weight: 600;
-    line-height: 100%;
+    line-height: 1.2;
+
     color: var(--title-color);
     text-decoration: none;
     cursor: pointer;

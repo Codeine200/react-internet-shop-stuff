@@ -1,0 +1,1 @@
+export { ShoppingIndicators } from "./ui/ShoppingIndicators";

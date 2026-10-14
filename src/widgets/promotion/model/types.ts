@@ -19,7 +19,7 @@ export type PromotionProps = {
     };
 };
 
-type CategoryId = typeof categories[number]['id'];
+export type CategoryId = typeof categories[number]['id'];
 
 export type PromotionsByCategory = Record<CategoryId, PromotionProps>;
 

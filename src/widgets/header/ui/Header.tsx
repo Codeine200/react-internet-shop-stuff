@@ -1,15 +1,13 @@
-import type { JSX } from 'react';
 import styles from './Header.module.css';
 import logo from '@/app/assets/images/logo.png';
 
-import heart from '@/app/assets/images/heart.png';
-import cart from '@/app/assets/images/cart.png';
 import {memo} from "react";
 import {Link} from "react-router-dom";
 import {Search} from "@/features/search";
 import {UserProfile} from "@/widgets/user-profile";
+import { ShoppingIndicators } from '@/widgets/shopping-indicators';
 
-const HeaderComponent = (): JSX.Element => {
+const HeaderComponent = () => {
 
   return (
       <>
@@ -29,12 +27,7 @@ const HeaderComponent = (): JSX.Element => {
                       <div className={styles.top}>
                           <UserProfile />
                           <Search />
-                          <div className={styles.shopIconsContainer}>
-                              <img src={heart} alt="heart"/>
-                              <div className={styles.shopIcons}><img src={cart} alt="cart"/>
-                                  <div className={styles.count}>8</div>
-                              </div>
-                          </div>
+                          <ShoppingIndicators />
                       </div>
                   </header>
               </section>
